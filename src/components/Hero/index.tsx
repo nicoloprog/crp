@@ -56,7 +56,7 @@ export default function Hero() {
             <AnimatedTitle
               id="heroTitle"
               fontFamily={"Cinzel"}
-              fontSize={{ base: "2.1rem", xl: "4rem" }}
+              fontSize={{ base: "2rem", xl: "4rem" }}
               maxW={{ base: "96%", lg: "75%" }}
               fontWeight={"600"}
               lineHeight="120%"
@@ -131,7 +131,7 @@ export default function Hero() {
       ></Box>
       <Box
         position="absolute"
-        bottom={{ base: "3.5%", lg: "0%" }}
+        bottom={{ base: "3%", lg: "0%" }}
         width={{ base: "92.5%", lg: "65%" }}
         m={{ base: "0 1.5%", lg: "0 0 0 4.25%" }}
         borderRadius={4}
