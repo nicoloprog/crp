@@ -42,7 +42,7 @@ export default function Hero() {
       <Flex w={"100%"} h="100%">
         <Flex
           position="absolute"
-          top={{ base: "55%", lg: "60%" }}
+          top={{ base: "57.5%", lg: "60%" }}
           left={{ base: "3%", lg: "5%" }}
           direction="column"
           w={"full"}
@@ -56,7 +56,7 @@ export default function Hero() {
             <AnimatedTitle
               id="heroTitle"
               fontFamily={"Cinzel"}
-              fontSize={{ base: "1.85rem", xl: "4rem" }}
+              fontSize={{ base: "1.9rem", xl: "4rem" }}
               maxW={{ base: "88%", lg: "75%" }}
               fontWeight={"600"}
               lineHeight="120%"
@@ -131,12 +131,12 @@ export default function Hero() {
       ></Box>
       <Box
         position="absolute"
-        bottom={{ base: "14%", lg: "0%" }}
+        bottom={{ base: "7.5%", lg: "0%" }}
         width={{ base: "90%", lg: "65%" }}
         m={{ base: "0 1.5%", lg: "0 0 0 4.25%" }}
         borderRadius={4}
         background="linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.1))"
-        minH={{ base: "30vh", lg: "41vh" }}
+        minH={{ base: "40vh", lg: "41vh" }}
         zIndex={1}
       ></Box>
     </Box>
