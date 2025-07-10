@@ -56,8 +56,8 @@ export default function Hero() {
             <AnimatedTitle
               id="heroTitle"
               fontFamily={"Cinzel"}
-              fontSize={{ base: "1.9rem", xl: "4rem" }}
-              maxW={{ base: "88%", lg: "75%" }}
+              fontSize={{ base: "2.1rem", xl: "4rem" }}
+              maxW={{ base: "96%", lg: "75%" }}
               fontWeight={"600"}
               lineHeight="120%"
               opacity={0}
