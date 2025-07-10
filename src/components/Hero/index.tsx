@@ -43,7 +43,7 @@ export default function Hero() {
         <Flex
           position="absolute"
           top={{ base: "57.5%", lg: "60%" }}
-          left={{ base: "3%", lg: "5%" }}
+          left={{ base: "1.5%", lg: "5%" }}
           direction="column"
           w={"full"}
           maxH="100svh"
@@ -59,7 +59,7 @@ export default function Hero() {
               fontSize={{ base: "2rem", xl: "4rem" }}
               maxW={{ base: "96%", lg: "75%" }}
               fontWeight={"600"}
-              lineHeight="105%"
+              lineHeight="100%"
               opacity={0}
             >
               construisons vos projets de demain
@@ -72,7 +72,7 @@ export default function Hero() {
               fontSize={{ base: "0.98rem", lg: "1.5rem" }}
               maxW={{ base: "85%", lg: "35%" }}
               fontWeight="400"
-              lineHeight="115%"
+              lineHeight="125%"
               opacity={0}
             >
               de la conception à la réalisation, nous bâtissons des espaces
@@ -135,7 +135,7 @@ export default function Hero() {
         width={{ base: "94%", lg: "65%" }}
         m={{ base: "0 1.5%", lg: "0 0 0 4.25%" }}
         borderRadius={4}
-        background="linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.1))"
+        background="linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.1))"
         minH={{ base: "40vh", lg: "41vh" }}
         zIndex={1}
       ></Box>
