@@ -131,8 +131,8 @@ export default function Hero() {
       ></Box>
       <Box
         position="absolute"
-        bottom={{ base: "7.5%", lg: "0%" }}
-        width={{ base: "90%", lg: "65%" }}
+        bottom={{ base: "3.5%", lg: "0%" }}
+        width={{ base: "92.5%", lg: "65%" }}
         m={{ base: "0 1.5%", lg: "0 0 0 4.25%" }}
         borderRadius={4}
         background="linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.1))"
