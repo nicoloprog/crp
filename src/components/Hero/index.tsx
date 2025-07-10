@@ -59,7 +59,7 @@ export default function Hero() {
               fontSize={{ base: "2rem", xl: "4rem" }}
               maxW={{ base: "96%", lg: "75%" }}
               fontWeight={"600"}
-              lineHeight="110%"
+              lineHeight="105%"
               opacity={0}
             >
               construisons vos projets de demain
@@ -72,7 +72,7 @@ export default function Hero() {
               fontSize={{ base: "0.98rem", lg: "1.5rem" }}
               maxW={{ base: "85%", lg: "35%" }}
               fontWeight="400"
-              lineHeight="125%"
+              lineHeight="115%"
               opacity={0}
             >
               de la conception à la réalisation, nous bâtissons des espaces
