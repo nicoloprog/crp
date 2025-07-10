@@ -16,7 +16,6 @@ const AnimatedHeading = ({
   markers,
   children,
   id,
-  as,
   nbColorWords = 0,
   ...rest
 }: AnimatedHeadingProps) => {

@@ -16,8 +16,6 @@ const AnimatedTitle = ({
   markers,
   children,
   id,
-  as,
-  nbColorWords = 0,
   ...rest
 }: AnimatedHeadingProps) => {
   const ref = useRef(null);
@@ -29,7 +27,7 @@ const AnimatedTitle = ({
     });
 
     const chars = document.querySelectorAll(`#${id} > .word`);
-    chars.forEach((char, index) => {
+    chars.forEach((char) => {
       const wrapper = document.createElement("span");
       wrapper.style.overflow = "hidden";
       wrapper.style.display = "inline-flex";

@@ -1,32 +1,10 @@
 "use client";
 
-import {
-  Box,
-  Button,
-  Flex,
-  Heading,
-  Text,
-  useBreakpointValue,
-} from "@chakra-ui/react";
-import { Image } from "@chakra-ui/react";
+import { Box, Button, Flex, useBreakpointValue } from "@chakra-ui/react";
 import NextLink from "next/link";
 import AnimatedHeading from "../AnimatedHeading";
 import AnimatedTitle from "../AnimatedTitle";
-import { keyframes } from "@emotion/react"; // Import keyframes from emotion/react
-import { useRef, useEffect, useState } from "react";
-
-// Define bounce animation
-const bounce = keyframes`
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0) scaleY(1);
-  }
-  40% {
-    transform: translateY(-15px) scaleY(0.8);
-  }
-  60% {
-    transform: translateY(-5px) ;
-  }
-`;
+import { useRef, useEffect } from "react";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);

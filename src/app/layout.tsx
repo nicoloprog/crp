@@ -17,7 +17,7 @@ export default function RootLayout({
       <body>
         <style>
           @import
-          url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+          url(&apos;https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap&apos;);
         </style>
         <ChakraProviders>{children}</ChakraProviders>
       </body>

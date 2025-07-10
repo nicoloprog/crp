@@ -1,7 +1,6 @@
 "use client";
 import { CacheProvider } from "@chakra-ui/next-js";
 import { ChakraProvider, extendTheme, ThemeConfig } from "@chakra-ui/react";
-import { Global } from "@emotion/react";
 
 const config: ThemeConfig = {
   initialColorMode: "dark",
