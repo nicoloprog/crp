@@ -59,7 +59,7 @@ export default function Hero() {
               fontSize={{ base: "2rem", xl: "4rem" }}
               maxW={{ base: "96%", lg: "75%" }}
               fontWeight={"600"}
-              lineHeight="120%"
+              lineHeight="110%"
               opacity={0}
             >
               construisons vos projets de demain
@@ -131,7 +131,7 @@ export default function Hero() {
       ></Box>
       <Box
         position="absolute"
-        bottom={{ base: "3%", lg: "0%" }}
+        bottom={{ base: "2.75%", lg: "0%" }}
         width={{ base: "94%", lg: "65%" }}
         m={{ base: "0 1.5%", lg: "0 0 0 4.25%" }}
         borderRadius={4}
