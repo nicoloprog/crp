@@ -57,10 +57,11 @@ export default function Hero() {
               id="heroTitle"
               fontFamily={"Cinzel"}
               fontSize={{ base: "2rem", xl: "4rem" }}
-              maxW={{ base: "80%", lg: "75%" }}
+              maxW={{ base: "60%", lg: "75%" }}
               fontWeight={"600"}
               lineHeight="95%"
               opacity={0}
+              wordBreak={"break-word"}
             >
               construisons vos projets de demain
             </AnimatedTitle>
