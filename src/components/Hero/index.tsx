@@ -3,7 +3,6 @@
 import { Box, Button, Flex, useBreakpointValue } from "@chakra-ui/react";
 import NextLink from "next/link";
 import AnimatedHeading from "../AnimatedHeading";
-import AnimatedTitle from "../AnimatedTitle";
 import { useRef, useEffect } from "react";
 
 export default function Hero() {
