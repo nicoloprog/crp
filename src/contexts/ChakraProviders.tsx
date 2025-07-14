@@ -1,5 +1,4 @@
 "use client";
-import { CacheProvider } from "@chakra-ui/next-js";
 import { ChakraProvider, extendTheme, ThemeConfig } from "@chakra-ui/react";
 
 const config: ThemeConfig = {
@@ -11,8 +10,8 @@ const theme = extendTheme({
   config,
 
   fonts: {
-    heading: `'Montserrat', sans-serif`,
-    body: `'Montserrat', sans-serif`,
+    heading: `'Poppins', sans-serif`,
+    body: `'Poppins', sans-serif`,
   },
   styles: {
     global: {
@@ -32,14 +31,12 @@ const theme = extendTheme({
 
 function ChakraProviders({ children }: { children: React.ReactNode }) {
   return (
-    <CacheProvider>
-      <ChakraProvider
-        theme={theme}
-        toastOptions={{ defaultOptions: { position: "top-right" } }}
-      >
-        {children}
-      </ChakraProvider>
-    </CacheProvider>
+    <ChakraProvider
+      theme={theme}
+      toastOptions={{ defaultOptions: { position: "top-right" } }}
+    >
+      {children}
+    </ChakraProvider>
   );
 }
 

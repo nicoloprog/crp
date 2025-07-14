@@ -57,9 +57,9 @@ export default function Hero() {
               id="heroTitle"
               fontFamily={"Cinzel"}
               fontSize={{ base: "2rem", xl: "4rem" }}
-              maxW={{ base: "96%", lg: "75%" }}
+              maxW={{ base: "80%", lg: "75%" }}
               fontWeight={"600"}
-              lineHeight="100%"
+              lineHeight="95%"
               opacity={0}
             >
               construisons vos projets de demain
@@ -69,10 +69,10 @@ export default function Hero() {
             <AnimatedHeading
               id="textHero"
               fontFamily={"Cinzel"}
-              fontSize={{ base: "0.98rem", lg: "1.5rem" }}
+              fontSize={{ base: "0.90rem", lg: "1.5rem" }}
               maxW={{ base: "85%", lg: "35%" }}
               fontWeight="400"
-              lineHeight="125%"
+              lineHeight="115%"
               opacity={0}
             >
               de la conception à la réalisation, nous bâtissons des espaces
@@ -129,16 +129,16 @@ export default function Hero() {
         background="linear-gradient(180deg, rgba(0, 6, 22, 0),rgba(0, 6, 22, 0.43), rgb(0, 5, 17))"
         zIndex={2}
       ></Box>
-      <Box
+      {/* <Box
         position="absolute"
         bottom={{ base: "2.75%", lg: "0%" }}
-        width={{ base: "105%", lg: "65%" }}
+        width={{ base: "92%", lg: "65%" }}
         m={{ base: "0 1.5%", lg: "0 0 0 4.25%" }}
         borderRadius={4}
         background="linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.1))"
         minH={{ base: "40vh", lg: "41vh" }}
         zIndex={1}
-      ></Box>
+      ></Box> */}
     </Box>
   );
 }
