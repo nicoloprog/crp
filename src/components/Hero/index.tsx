@@ -52,8 +52,8 @@ export default function Hero() {
           zIndex={1000}
           textAlign="left"
         >
-          <Box maxW={{ base: "98%", lg: "100%" }}>
-            <AnimatedTitle
+          <Box maxW={{ base: "100%", lg: "100%" }}>
+            <AnimatedHeading
               id="heroTitle"
               fontFamily={"Cinzel"}
               fontSize={{ base: "2rem", xl: "4rem" }}
@@ -61,10 +61,9 @@ export default function Hero() {
               fontWeight={"600"}
               lineHeight="95%"
               opacity={0}
-              wordBreak={"keep-all"}
             >
               construisons vos projets de demain
-            </AnimatedTitle>
+            </AnimatedHeading>
           </Box>
           <Box>
             <AnimatedHeading
