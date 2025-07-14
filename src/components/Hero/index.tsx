@@ -128,16 +128,16 @@ export default function Hero() {
         background="linear-gradient(180deg, rgba(0, 6, 22, 0),rgba(0, 6, 22, 0.43), rgb(0, 5, 17))"
         zIndex={2}
       ></Box>
-      {/* <Box
+      <Box
         position="absolute"
-        bottom={{ base: "2.75%", lg: "0%" }}
+        bottom={{ base: "0%", lg: "0%" }}
         width={{ base: "92%", lg: "65%" }}
         m={{ base: "0 1.5%", lg: "0 0 0 4.25%" }}
         borderRadius={4}
         background="linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.1))"
-        minH={{ base: "40vh", lg: "41vh" }}
+        minH={{ base: "43svh", lg: "41svh" }}
         zIndex={1}
-      ></Box> */}
+      ></Box>
     </Box>
   );
 }
