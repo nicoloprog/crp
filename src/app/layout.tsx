@@ -1,8 +1,6 @@
 "use client";
-import type { Metadata } from "next";
 import Header from "@/components/Header";
 import ChakraProviders from "@/contexts/ChakraProviders";
-import { use } from "react";
 
 // export const metadata: Metadata = {
 //   title: "Concept Renovation Prestige",
