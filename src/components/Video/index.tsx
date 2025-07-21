@@ -2,10 +2,9 @@
 
 import { Box, Flex, Container, Text, Heading } from "@chakra-ui/react";
 import { useState, useRef } from "react";
-import { Icon } from "@chakra-ui/react";
 
 // Simple PlayIcon component using Chakra UI's Icon and SVG
-const PlayIcon = (props: any) => <Icon viewBox="0 0 64 64" {...props}></Icon>;
+// const PlayIcon = (props: any) => <Icon viewBox="0 0 64 64" {...props}></Icon>;
 
 export default function Component() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -67,10 +66,10 @@ export default function Component() {
             }
           }}
         >
-          <PlayIcon
+          {/* <PlayIcon
             height={{ base: "50px", lg: "125px" }}
             width={{ base: "50px", lg: "125px" }}
-          />
+          /> */}
         </Box>
         <Box
           position={{ base: "relative", md: "absolute" }}
