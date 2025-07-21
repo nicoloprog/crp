@@ -40,6 +40,7 @@ export default function Component() {
           ref={videoRef}
           muted
           playsInline
+          autoPlay
           loop
           controls={videoRef.current?.controls}
           title={"Concept Renovation Prestige Introduction"}
@@ -104,7 +105,8 @@ export default function Component() {
                 repenser une salle de bain ou rénover entièrement une maison,
                 notre équipe d'experts met tout en œuvre pour donner vie à vos
                 idées et dépasser vos attentes. Offrez à votre intérieur le
-                confort, la fonctionnalité et l’esthétique qu’il mérite.
+                confort, la fonctionnalité et l&apos;esthétique qu&apos;il
+                mérite.
               </Text>
             </Box>
           </Flex>
