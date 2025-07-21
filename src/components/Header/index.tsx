@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Button, Flex, Link, Text, Image } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import React from "react";
 import NextLink from "next/link";
 import NextImage from "next/image";

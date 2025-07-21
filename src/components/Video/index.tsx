@@ -94,19 +94,19 @@ export default function Component() {
               </Heading>
 
               <Text fontSize={{ base: "sm", md: "md" }} lineHeight="tall">
-                Découvrez l'excellence en rénovation résidentielle avec notre
-                entreprise de projets clés en main. Nous vous accompagnons de la
-                conception à la réalisation, en prenant en charge chaque étape
-                avec rigueur et transparence. <br />
+                Découvrez l&apos;excellence en rénovation résidentielle avec
+                notre entreprise de projets clés en main. Nous vous accompagnons
+                de la conception à la réalisation, en prenant en charge chaque
+                étape avec rigueur et transparence. <br />
                 <br />
                 Notre professionnalisme transforme vos espaces de vie en
-                véritables chefs-d'œuvre, alliant savoir-faire, élégance et
-                matériaux de qualité. Qu'il s'agisse de moderniser une cuisine,
-                repenser une salle de bain ou rénover entièrement une maison,
-                notre équipe d'experts met tout en œuvre pour donner vie à vos
-                idées et dépasser vos attentes. Offrez à votre intérieur le
-                confort, la fonctionnalité et l&apos;esthétique qu&apos;il
-                mérite.
+                véritables chefs-d&apos;œuvre, alliant savoir-faire, élégance et
+                matériaux de qualité. Qu&apos;il s&apos;agisse de moderniser une
+                cuisine, repenser une salle de bain ou rénover entièrement une
+                maison, notre équipe d&apos;experts met tout en œuvre pour
+                donner vie à vos idées et dépasser vos attentes. Offrez à votre
+                intérieur le confort, la fonctionnalité et l&apos;esthétique
+                qu&apos;il mérite.
               </Text>
             </Box>
           </Flex>
