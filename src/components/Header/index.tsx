@@ -37,7 +37,7 @@ const Header = () => {
   return (
     <Box
       position={{ base: "fixed", "2xl": "absolute" }}
-      top={{ base: "-4%", md: "0" }}
+      top={{ base: "-7%", md: "0" }}
       w={{ base: "100%", md: "10%" }}
       mx={"auto"}
       isolation={"isolate"}

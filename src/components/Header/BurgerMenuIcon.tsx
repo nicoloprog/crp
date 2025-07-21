@@ -2,7 +2,7 @@ import { Icon, IconProps } from "@chakra-ui/react";
 
 const BurgerMenuIcon = ({ ...rest }: IconProps) => (
   <Icon
-    width={{ base: "55px", md: "68px" }}
+    width={{ base: "45px", md: "68px" }}
     height={{ base: "50px", md: "50px" }}
     viewBox="10 10 48 37"
     {...rest}

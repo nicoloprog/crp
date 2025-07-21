@@ -1,17 +1,17 @@
 "use client";
 
-import { Box, Flex, Container, Text, Heading } from "@chakra-ui/react";
+import { Box, Flex, Container, Text, Heading, Icon } from "@chakra-ui/react";
 import { useState, useRef } from "react";
 
 // Simple PlayIcon component using Chakra UI's Icon and SVG
-// const PlayIcon = (props: any) => <Icon viewBox="0 0 64 64" {...props}></Icon>;
+const PlayIcon = (props: any) => <Icon viewBox="0 0 64 64" {...props}></Icon>;
 
 export default function Component() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoActive, setIsVideoActive] = useState(false);
 
   return (
-    <Container maxW="6xl">
+    <Container minH="100svh" py={20} bgColor={"#0B101E"}>
       <Flex
         justify="center"
         align="center"
@@ -66,10 +66,10 @@ export default function Component() {
             }
           }}
         >
-          {/* <PlayIcon
+          <PlayIcon
             height={{ base: "50px", lg: "125px" }}
             width={{ base: "50px", lg: "125px" }}
-          /> */}
+          />
         </Box>
         <Box
           position={{ base: "relative", md: "absolute" }}
@@ -85,6 +85,7 @@ export default function Component() {
           p={{ base: 6, md: 10 }}
           color="white"
           overflow="hidden"
+          display={{ base: "none", md: "flex" }}
         >
           <Flex justify="flex-end">
             <Box w={{ base: "100%", md: "50%" }} textAlign="left">
