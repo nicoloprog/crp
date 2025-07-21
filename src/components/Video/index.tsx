@@ -1,115 +1,137 @@
 "use client";
 
-import { Box, Flex, Container, Text, Heading, Icon } from "@chakra-ui/react";
-import { useState, useRef } from "react";
-
-// Simple PlayIcon component using Chakra UI's Icon and SVG
-const PlayIcon = (props: any) => <Icon viewBox="0 0 64 64" {...props}></Icon>;
+import { Box, Flex, Container, Text, Heading } from "@chakra-ui/react";
+import { useRef, useState } from "react";
+import PlayIcon from "../icons/PlayIcon";
 
 export default function Component() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoActive, setIsVideoActive] = useState(false);
 
   return (
-    <Container minH="100svh" py={20} bgColor={"#0B101E"}>
+    <Container maxW="100%" py={20} bgColor="#0B101E" centerContent>
       <Flex
+        position="relative"
         justify="center"
         align="center"
-        direction={{ base: "column", md: "row" }}
-        gap={{ base: 6, md: 0 }}
         minH="100vh"
-        position="relative"
-        marginTop={{ base: 0, md: 32 }}
+        w="100%"
       >
         <Box
-          position={{ base: "relative", md: "absolute" }}
-          left={{ base: "0", md: "-7.5%" }}
-          w={{ base: "80%", md: "60%" }}
-          maxH={{ base: "40%", md: "70.5%" }}
-          boxShadow="0 20px 40px rgba(0, 0, 0, 0.71), 0 0 0 1px rgba(255, 255, 255, 0.1) inset"
-          borderRadius="15px"
-          transform="perspective(500px) rotateY(7.5deg) rotateZ(-0.5deg)"
-          transformOrigin="bottom"
-          transition="transform 0.5s ease"
-          _hover={{
-            transform: "perspective(100px) rotateY(-0deg)",
-          }}
-          zIndex={2}
-          as="video"
-          ref={videoRef}
-          muted
-          playsInline
-          autoPlay
-          loop
-          controls={videoRef.current?.controls}
-          title={"Concept Renovation Prestige Introduction"}
-          src="/conceptrenovationprestige.mp4"
-          objectFit="fill"
-        />
-
-        <Box
-          transition={"700ms"}
-          opacity={isVideoActive ? 0 : 1}
-          pointerEvents={isVideoActive ? "none" : "all"}
-          as={"button"}
-          isolation={"isolate"}
-          position={"absolute"}
-          bottom={{ base: "24px", lg: "50px" }}
-          left={{ base: "24px", lg: "0px" }}
-          zIndex={10}
-          onClick={() => {
-            setIsVideoActive((prev) => !prev);
-            if (videoRef.current) {
-              videoRef.current.muted = false;
-              videoRef.current.requestFullscreen();
-              videoRef.current.controls = true;
-            }
-          }}
+          position="relative"
+          w="100%"
+          maxW="1400px"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
         >
-          <PlayIcon
-            height={{ base: "50px", lg: "125px" }}
-            width={{ base: "50px", lg: "125px" }}
-          />
-        </Box>
-        <Box
-          position={{ base: "relative", md: "absolute" }}
-          right={{ base: "0", md: "-7.5%" }}
-          minW={{ base: "80%", md: "68.5%" }}
-          h={{ base: "auto", md: "70svh" }}
-          boxShadow="0 20px 40px rgba(0, 0, 0, 0.71), 0 0 0 1px rgba(255, 255, 255, 0.1) inset"
-          borderRadius="15px"
-          transform="perspective(1000px) rotateY(-10.5deg) rotateX(-2.5deg) rotateZ(0.5deg)"
-          transformOrigin="bottom"
-          transition="transform 0.5s ease"
-          bg="linear-gradient(to right, #bdc3c7, #4a4a4a);"
-          p={{ base: 6, md: 10 }}
-          color="white"
-          overflow="hidden"
-          display={{ base: "none", md: "flex" }}
-        >
-          <Flex justify="flex-end">
-            <Box w={{ base: "100%", md: "50%" }} textAlign="left">
-              <Heading fontSize={{ base: "xl", md: "2xl" }} mt={4}>
-                À propos
-              </Heading>
+          {/* VIDEO CARD CONTAINER */}
+          <Box
+            position="absolute"
+            left={{ base: "0", md: "10%" }}
+            w={{ base: "80%", md: "38%" }}
+            maxH={{ base: "auto", md: "70vh" }}
+            borderRadius="15px"
+            overflow="hidden"
+            boxShadow="0 20px 40px rgba(0, 0, 0, 0.71), 0 0 0 1px rgba(255, 255, 255, 0.1) inset"
+            transform="perspective(700px) rotateY(7.5deg) rotateZ(-0.5deg)"
+            transformOrigin="bottom"
+            transition="transform 0.5s ease"
+            _hover={{
+              transform: "perspective(700px) rotateY(0deg)",
+            }}
+            zIndex={2}
+          >
+            {/* Video Element */}
+            <Box
+              as="video"
+              ref={videoRef}
+              src="/conceptrenovationprestige.mp4"
+              muted
+              playsInline
+              autoPlay
+              loop
+              title="Concept Renovation Prestige Introduction"
+              objectFit="cover"
+              w="100%"
+              h="100%"
+            />
 
-              <Text fontSize={{ base: "sm", md: "md" }} lineHeight="tall">
-                Découvrez l&apos;excellence en rénovation résidentielle avec
-                notre entreprise de projets clés en main. Nous vous accompagnons
-                de la conception à la réalisation, en prenant en charge chaque
-                étape avec rigueur et transparence. <br />
-                <br />
-                Notre professionnalisme transforme vos espaces de vie en
-                véritables chefs-d&apos;œuvre, alliant savoir-faire, élégance et
-                matériaux de qualité. Qu&apos;il s&apos;agisse de moderniser une
-                cuisine, repenser une salle de bain ou rénover entièrement une
-                maison, notre équipe d&apos;experts met tout en œuvre pour
-                donner vie à vos idées et dépasser vos attentes. Offrez à votre
-                intérieur le confort, la fonctionnalité et l&apos;esthétique
-                qu&apos;il mérite.
-              </Text>
+            {/* Play Button inside video */}
+            <Box
+              as="button"
+              position="absolute"
+              bottom="40px"
+              left="40px"
+              zIndex={10}
+              opacity={isVideoActive ? 0 : 1}
+              pointerEvents={isVideoActive ? "none" : "all"}
+              transition="opacity 0.7s"
+              onClick={() => {
+                setIsVideoActive(true);
+                if (videoRef.current) {
+                  videoRef.current.muted = false;
+                  videoRef.current.requestFullscreen();
+                  videoRef.current.controls = true;
+                }
+              }}
+            >
+              <PlayIcon
+                height={{ base: "50px", md: "95px" }}
+                width={{ base: "50px", md: "95px" }}
+              />
             </Box>
-          </Flex>
+          </Box>
+
+          {/* TEXT CARD */}
+          <Box
+            position="absolute"
+            right={{ base: "0", md: "2.5%" }}
+            maxW={{ base: "80%", md: "60%" }}
+            h={{ base: "auto", md: "70vh" }}
+            borderRadius="15px"
+            boxShadow="0 20px 40px rgba(0, 0, 0, 0.71), 0 0 0 1px rgba(255, 255, 255, 0.1) inset"
+            p={{ base: 6, md: 10 }}
+            color="white"
+            overflow="hidden"
+            transform="perspective(1000px) rotateY(-10.5deg) rotateX(-2.5deg) rotateZ(0.5deg)"
+            transformOrigin="bottom"
+            transition="transform 0.5s ease"
+            borderRightRadius="20px"
+            border={"1px solid rgba(255, 255, 255, 0.19)"}
+            bg="rgba(77, 77, 77, 0.2)"
+            backdropFilter="blur(10px)"
+            display={{ base: "none", md: "block" }}
+            zIndex={1}
+          >
+            <Flex justify="flex-end" h="100%">
+              <Box w="84%" textAlign="left">
+                <Heading fontSize={{ base: "xl", md: "5xl" }} mt={4}>
+                  À propos
+                </Heading>
+                <Text
+                  fontSize={{ base: "sm", md: "lg" }}
+                  lineHeight="tall"
+                  mt={4}
+                >
+                  Découvrez l&apos;excellence en rénovation résidentielle avec
+                  notre entreprise de projets clés en main. Nous vous
+                  accompagnons de la conception à la réalisation, en prenant en
+                  charge chaque étape avec rigueur et transparence.
+                  <br />
+                  <br />
+                  Notre professionnalisme transforme vos espaces de vie en
+                  véritables chefs-d&apos;œuvre, alliant savoir-faire, élégance
+                  et matériaux de qualité. Qu&apos;il s&apos;agisse de
+                  moderniser une cuisine, repenser une salle de bain ou rénover
+                  entièrement une maison, notre équipe d&apos;experts met tout
+                  en œuvre pour donner vie à vos idées et dépasser vos attentes.
+                  Offrez à votre intérieur le confort, la fonctionnalité et
+                  l&apos;esthétique qu&apos;il mérite.
+                </Text>
+              </Box>
+            </Flex>
+          </Box>
         </Box>
       </Flex>
     </Container>
