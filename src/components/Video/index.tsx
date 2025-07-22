@@ -5,7 +5,12 @@ import { useRef, useState } from "react";
 
 // Placeholder for PlayIcon component, as it's imported from a relative path.
 // In a real application, ensure this component is correctly defined and imported.
-const PlayIcon = ({ width, height }) => (
+type PlayIconProps = {
+  width: string | number | object;
+  height: string | number | object;
+};
+
+const PlayIcon = ({ width, height }: PlayIconProps) => (
   <Box
     as="svg"
     viewBox="0 0 24 24"
@@ -24,7 +29,7 @@ const PlayIcon = ({ width, height }) => (
 );
 
 export default function Component() {
-  const videoRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoActive, setIsVideoActive] = useState(false);
 
   const handleVideoPlay = () => {
@@ -35,12 +40,12 @@ export default function Component() {
       // Fullscreen might require user gesture and browser support.
       if (videoRef.current.requestFullscreen) {
         videoRef.current.requestFullscreen();
-      } else if (videoRef.current.webkitRequestFullscreen) {
+      } else if ((videoRef.current as any).webkitRequestFullscreen) {
         /* Safari */
-        videoRef.current.webkitRequestFullscreen();
-      } else if (videoRef.current.msRequestFullscreen) {
+        (videoRef.current as any).webkitRequestFullscreen();
+      } else if ((videoRef.current as any)?.msRequestFullscreen) {
         /* IE11 */
-        videoRef.current.msRequestFullscreen();
+        (videoRef.current as any).msRequestFullscreen();
       }
       videoRef.current.controls = true;
     }
