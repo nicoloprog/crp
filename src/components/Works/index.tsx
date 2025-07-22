@@ -74,7 +74,7 @@ const ImageGalleryItem: React.FC<ImageGalleryItemProps> = ({
         position="absolute"
         top="0"
         left="0"
-        filter="brightness(0.4)"
+        filter="brightness(0.55)"
         transition="transform 0.3s ease"
       />
       <Flex
@@ -87,10 +87,10 @@ const ImageGalleryItem: React.FC<ImageGalleryItemProps> = ({
         justify="center"
         zIndex="1"
       >
-        <VStack align="center" spacing={2} p={4} borderRadius="md">
+        <VStack align="center" spacing={1} p={4} borderRadius="md">
           <Text
             color="white"
-            fontSize={{ base: "2xl", md: "4xl" }}
+            fontSize={{ base: "xl", md: "3xl" }}
             fontWeight="bold"
             textTransform="uppercase"
             letterSpacing="wide"

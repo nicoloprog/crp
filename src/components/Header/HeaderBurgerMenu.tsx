@@ -78,7 +78,7 @@ const HeaderBurgerMenu = ({ ...rest }: BoxProps) => {
         <Flex
           direction="column"
           pt={52}
-          gap={14}
+          gap={8}
           align="flex-start"
           justify="flex-start"
         >
@@ -96,7 +96,7 @@ const HeaderBurgerMenu = ({ ...rest }: BoxProps) => {
                 <Text
                   px={3}
                   py={1}
-                  fontSize="1.6rem"
+                  fontSize={{ base: "xl", md: "2xl" }}
                   fontWeight="medium"
                   borderRadius="md"
                   textTransform="none"
