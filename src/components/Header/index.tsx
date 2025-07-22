@@ -37,26 +37,24 @@ const Header = () => {
   return (
     <Box
       position={{ base: "fixed", "2xl": "absolute" }}
-      top={{ base: "-7%", md: "0" }}
-      w={{ base: "100%", md: "10%" }}
+      top={{ base: "-7%", md: "-4%" }}
+      left={{ base: "0", md: "2.5%" }}
+      w={{ base: "100%", md: "90%" }}
       mx={"auto"}
       isolation={"isolate"}
-      display={{ base: "", md: "none" }}
       zIndex={1100}
     >
       <Flex
         justifyContent="space-between"
         px={{ base: 4, md: 12 }}
-        maxW={"98%"}
-        mx={"auto"}
-        borderRadius={"50px"}
+        minW={"100%"}
       >
         <Flex w={"96%"} justifyContent="space-between" align={"center"}>
           <NextLink href={"/"}>
             <Box
-              display={{ base: "inherit", lg: "none" }}
+              display={{ base: "inherit", lg: "" }}
               position={"relative"}
-              w={"140px"}
+              w={{ base: "140px", md: "160px", lg: "220px" }}
               aspectRatio={1 / 2}
             >
               <NextImage
@@ -69,6 +67,37 @@ const Header = () => {
             </Box>
           </NextLink>
           <HeaderBurgerMenu />
+        </Flex>
+        <Flex
+          gap={{ base: 2, md: 4, lg: 6, xl: 8 }}
+          align="center"
+          borderRadius="full"
+          py={2}
+          px={6}
+          display={{ base: "none", md: "flex" }}
+        >
+          {sectionLinks.map((link) => (
+            <NextLink key={link.href} href={link.href} passHref>
+              <Box
+                as="a"
+                px={4}
+                py={2}
+                borderRadius="full"
+                color={link.label === "Accueil" ? "white" : "gray.200"}
+                bg={
+                  link.label === "Accueil"
+                    ? "rgba(255,255,255,0.2)"
+                    : "transparent"
+                }
+                _hover={{ bg: "rgba(255,255,255,0.1)" }}
+                fontWeight="medium"
+                fontSize={{ base: "sm", md: "lg", lg: "xl", xl: "2xl" }}
+                whiteSpace="nowrap"
+              >
+                {link.label === "Contactez-nous" ? "Contact" : link.label}
+              </Box>
+            </NextLink>
+          ))}
         </Flex>
       </Flex>
     </Box>
