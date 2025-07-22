@@ -16,8 +16,8 @@ const App = () => {
   const images = [
     { title: "Cuisine", imageUrl: "/cuisine.jpeg" },
     { title: "Salle de bain", imageUrl: "/salledebain.jpeg" },
-    { title: "Projets intérieurs", imageUrl: "/exterieur.png" },
-    { title: "Projets Extérieurs", imageUrl: "/interieur.png" },
+    { title: "Projets intérieurs", imageUrl: "/interieur.png" },
+    { title: "Projets Extérieurs", imageUrl: "/exterieur.png" },
   ];
 
   return (
