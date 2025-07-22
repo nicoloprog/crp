@@ -3,13 +3,13 @@
 import { Box, Flex, Container, Text, Heading } from "@chakra-ui/react";
 import { useRef, useState } from "react";
 
-// Placeholder for PlayIcon component, as it's imported from a relative path.
-// In a real application, ensure this component is correctly defined and imported.
+// Types for props
 type PlayIconProps = {
   width: string | number | object;
   height: string | number | object;
 };
 
+// Composant PlayIcon typé
 const PlayIcon = ({ width, height }: PlayIconProps) => (
   <Box
     as="svg"
@@ -36,17 +36,21 @@ export default function Component() {
     setIsVideoActive(true);
     if (videoRef.current) {
       videoRef.current.muted = false;
-      // Attempt to go fullscreen and show controls.
-      // Fullscreen might require user gesture and browser support.
-      if (videoRef.current.requestFullscreen) {
-        videoRef.current.requestFullscreen();
-      } else if ((videoRef.current as any).webkitRequestFullscreen) {
-        /* Safari */
-        (videoRef.current as any).webkitRequestFullscreen();
-      } else if ((videoRef.current as any)?.msRequestFullscreen) {
-        /* IE11 */
-        (videoRef.current as any).msRequestFullscreen();
+
+      // Typage étendu pour supporter les méthodes spécifiques aux navigateurs
+      const video = videoRef.current as HTMLVideoElement & {
+        webkitRequestFullscreen?: () => void;
+        msRequestFullscreen?: () => void;
+      };
+
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+      } else if (video.msRequestFullscreen) {
+        video.msRequestFullscreen();
       }
+
       videoRef.current.controls = true;
     }
   };
@@ -62,32 +66,29 @@ export default function Component() {
         position="relative"
         justify="center"
         align="center"
-        // Adjust minH for mobile to prevent excessive scrolling on short content
         minH={{ base: "auto", md: "100vh" }}
         w="100%"
-        direction={{ base: "column", md: "row" }} // Add gap between stacked elements on mobile
-        px={{ base: 4, md: 0 }} // Add horizontal padding on mobile
+        direction={{ base: "column", md: "row" }}
+        px={{ base: 4, md: 0 }}
       >
         <Box
-          position={{ base: "relative", md: "relative" }} // Relative positioning for stacking
-          w={{ base: "90%", md: "100%" }} // Wider on mobile
-          maxW={{ base: "500px", md: "1400px" }} // Max width for content
+          position={{ base: "relative", md: "relative" }}
+          w={{ base: "90%", md: "100%" }}
+          maxW={{ base: "500px", md: "1400px" }}
           display="flex"
-          flexDirection={{ base: "column", md: "row" }} // Ensure column for content inside on mobile
+          flexDirection={{ base: "column", md: "row" }}
           alignItems="center"
           justifyContent="center"
         >
-          {/* VIDEO CARD CONTAINER */}
+          {/* VIDEO CARD */}
           <Box
-            position={{ base: "relative", md: "absolute" }} // Absolute for desktop, relative for mobile
-            left={{ base: "auto", md: "10%" }} // Auto for mobile, 10% for desktop
-            w={{ base: "100%", md: "38%" }} // Full width on mobile, 38% on desktop
-            maxH={{ base: "300px", md: "70svh" }} // Adjusted max height for mobile
+            position={{ base: "relative", md: "absolute" }}
+            left={{ base: "auto", md: "10%" }}
+            w={{ base: "100%", md: "38%" }}
+            maxH={{ base: "300px", md: "70svh" }}
             borderRadius="15px"
-            border={"4px solid rgba(57, 57, 57, 0.45)"}
             overflow="hidden"
             boxShadow="0 20px 40px rgba(0, 0, 0, 0.71), 0 0 0 1px rgba(255, 255, 255, 0.1) inset"
-            // Simplified transform for mobile, keep original for desktop
             transform={{
               base: "none",
               md: "perspective(700px) rotateY(10.5deg) rotateZ(-0.75deg)",
@@ -95,16 +96,16 @@ export default function Component() {
             transformOrigin="bottom"
             transition="transform 0.5s ease"
             _hover={{
-              base: {}, // No hover effect on mobile
+              base: {},
               md: { transform: "perspective(800px) rotateY(0deg)" },
             }}
             zIndex={2}
           >
-            {/* Video Element */}
+            {/* VIDEO ELEMENT */}
             <Box
               as="video"
               ref={videoRef}
-              src="/conceptrenovationprestige.mp4" // Ensure this video path is correct
+              src="/conceptrenovationprestige.mp4"
               muted
               playsInline
               autoPlay
@@ -115,11 +116,10 @@ export default function Component() {
               h="100%"
             />
 
-            {/* Play Button inside video */}
+            {/* PLAY BUTTON */}
             <Box
               as="button"
               position="absolute"
-              // Adjust position for mobile
               bottom={{ base: "20px", md: "40px" }}
               left={{ base: "20px", md: "40px" }}
               zIndex={10}
@@ -129,8 +129,8 @@ export default function Component() {
               onClick={handleVideoPlay}
             >
               <PlayIcon
-                height={{ base: "40px", md: "95px" }} // Smaller icon on mobile
-                width={{ base: "40px", md: "95px" }} // Smaller icon on mobile
+                height={{ base: "40px", md: "95px" }}
+                width={{ base: "40px", md: "95px" }}
               />
             </Box>
           </Box>
