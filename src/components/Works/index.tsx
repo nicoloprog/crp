@@ -5,6 +5,13 @@ import { Box, Text, VStack, Image, Flex } from "@chakra-ui/react";
 
 const App = () => {
   const [selected, setSelected] = useState<string>("Cuisine");
+  const [hasMounted, setHasMounted] = useState(false);
+
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) return null; // 👈 Prevent mismatch on initial SSR render
 
   const images = [
     { title: "Cuisine", imageUrl: "/cuisine.jpeg" },

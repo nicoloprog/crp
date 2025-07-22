@@ -37,8 +37,8 @@ const Header = () => {
   return (
     <Box
       position={{ base: "fixed", "2xl": "absolute" }}
-      top={{ base: "-7%", md: "-4%" }}
-      left={{ base: "0", md: "2.5%" }}
+      top={{ base: "-4%", md: "-2%", lg: "-8%", xl: "-3%" }}
+      left={{ base: "0", md: "-2%", lg: "4%", xl: "3%" }}
       w={{ base: "100%", md: "90%" }}
       mx={"auto"}
       isolation={"isolate"}
@@ -50,11 +50,11 @@ const Header = () => {
         minW={"100%"}
       >
         <Flex w={"96%"} justifyContent="space-between" align={"center"}>
-          <NextLink href={"/"}>
+          <NextLink href={"/"} passHref>
             <Box
               display={{ base: "inherit", lg: "" }}
               position={"relative"}
-              w={{ base: "140px", md: "160px", lg: "220px" }}
+              w={{ base: "100px", md: "130px", lg: "190px", xl: "220px" }}
               aspectRatio={1 / 2}
             >
               <NextImage
@@ -79,7 +79,6 @@ const Header = () => {
           {sectionLinks.map((link) => (
             <NextLink key={link.href} href={link.href} passHref>
               <Box
-                as="a"
                 px={4}
                 py={2}
                 borderRadius="full"
