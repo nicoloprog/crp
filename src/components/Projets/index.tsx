@@ -23,7 +23,6 @@ const imageSources = [
 ];
 
 export default function ProjetsCarousel() {
-  const sliderRef = useRef(null);
   const [sliderInstanceRef, slider] = useKeenSlider<HTMLDivElement>({
     loop: true,
     slides: {
