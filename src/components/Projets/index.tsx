@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 const imageSources = [
   "/projet1.png",
