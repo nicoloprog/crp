@@ -3,10 +3,27 @@
 import { Box, Button, Flex, useBreakpointValue } from "@chakra-ui/react";
 import NextLink from "next/link";
 import AnimatedHeading from "../AnimatedHeading";
-import { useRef, useEffect } from "react";
+import { Image } from "@chakra-ui/react";
+import { useRef, useEffect, useState } from "react";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleLoadedData = () => {
+      setIsLoaded(true);
+    };
+
+    video.addEventListener("loadeddata", handleLoadedData);
+
+    return () => {
+      video.removeEventListener("loadeddata", handleLoadedData);
+    };
+  }, []);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -23,6 +40,21 @@ export default function Hero() {
   });
   return (
     <Box position="relative" w="full" minH="100svh" overflow="hidden">
+      {!isLoaded && (
+        <Image
+          src={"/poster.png"}
+          alt="Loading preview"
+          position="absolute"
+          top={0}
+          left={0}
+          w="100%"
+          h="100%"
+          objectFit="cover"
+          zIndex={1}
+        />
+      )}
+
+      {/* Background video */}
       <Box
         as="video"
         ref={videoRef}
@@ -37,6 +69,7 @@ export default function Hero() {
         w="100%"
         h="100%"
         objectFit="cover"
+        zIndex={0}
       />
       <Flex w={"100%"} h="100%">
         <Flex

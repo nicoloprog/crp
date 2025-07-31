@@ -16,6 +16,7 @@
     "@gsap/react": "^2.1.2",
     "framer-motion": "^12.23.1",
     "gsap": "^3.13.0",
+    "keen-slider": "^6.8.6",
     "next": "15.3.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
