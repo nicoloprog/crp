@@ -24,8 +24,8 @@ export const sectionLinks: {
     href: "/#apropos",
   },
   {
-    label: "Financements",
-    href: "/financements",
+    label: "Financement",
+    href: "/#financement",
   },
   {
     label: "Contactez-nous",
