@@ -4,6 +4,8 @@ import Hero from "@/components/Hero";
 import Video from "@/components/Video";
 import Works from "@/components/Works";
 import ProjetsSection from "@/components/Projets";
+import Footer from "@/components/Footer";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       <Works />
       <Video />
       <ProjetsSection />
+      <Contact />
+      <Footer />
     </Box>
   );
 }

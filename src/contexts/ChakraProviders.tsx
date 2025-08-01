@@ -2,7 +2,7 @@
 import { ChakraProvider, extendTheme, ThemeConfig } from "@chakra-ui/react";
 
 const config: ThemeConfig = {
-  initialColorMode: "dark",
+  initialColorMode: "light",
   useSystemColorMode: false,
 };
 
@@ -16,7 +16,7 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: "#ADADC1", // Or any other color from the Chakra UI theme or custom palette
+        bg: "#484848ff", // Or any other color from the Chakra UI theme or custom palette
         color: "white", // This sets the default text color
       },
     },
