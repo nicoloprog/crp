@@ -94,7 +94,7 @@ export default function Hero() {
               lineHeight="95%"
               opacity={0}
             >
-              Construisons vos projets de demain
+              construisons vos projets de demain
             </AnimatedHeading>
           </Box>
           <Box>
