@@ -12,14 +12,13 @@ import "keen-slider/keen-slider.min.css";
 import { useEffect } from "react";
 
 const imageSources = [
-  "/projet1.png",
-  "/projet1.png",
-  "/projet1.png",
-  "/projet2.png",
-  "/projet1.png",
-  "/projet3.png",
-  "/projet2.png",
-  "/projet1.png",
+  "/gallerie1.jpg",
+  "/gallerie2.jpg",
+  "/gallerie3.jpg",
+  "/gallerie4.jpg",
+  "/gallerie5.jpg",
+  "/gallerie6.jpg",
+  "/gallerie7.jpg",
 ];
 
 export default function ProjetsCarousel() {

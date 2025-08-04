@@ -57,6 +57,7 @@ const ImageGalleryItem: React.FC<ImageGalleryItemProps> = ({
 }) => {
   return (
     <Box
+      id="projets"
       onClick={onClick}
       cursor="pointer"
       w={{

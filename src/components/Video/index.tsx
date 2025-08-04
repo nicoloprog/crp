@@ -58,15 +58,17 @@ export default function Component() {
   return (
     <Container
       maxW="100%"
+      minH={"100svh"}
       py={{ base: 10, md: 20 }}
       bgColor="#0B101E"
       centerContent
     >
       <Flex
+        id="apropos"
         position="relative"
         justify="center"
         align="center"
-        minH={{ base: "auto", md: "100vh" }}
+        minH={"100svh"}
         w="100%"
         direction={{ base: "column", md: "row" }}
         px={{ base: 4, md: 0 }}
@@ -154,7 +156,6 @@ export default function Component() {
             }}
             transformOrigin="bottom"
             transition="transform 0.5s ease"
-            borderRightRadius="20px"
             border="1px solid rgba(255, 255, 255, 0.19)"
             bg="rgba(77, 77, 77, 0.2)"
             backdropFilter="blur(10px)"

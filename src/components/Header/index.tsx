@@ -36,8 +36,8 @@ export const sectionLinks: {
 const Header = () => {
   return (
     <Box
-      position={{ base: "fixed", "2xl": "absolute" }}
-      top={{ base: "-4%", md: "-2%", lg: "-8%", xl: "-2.5%" }}
+      position={"absolute"}
+      top={{ base: "0%", lg: "-1%", xl: "-1.5%" }}
       left={{ base: "0", md: "-2%", lg: "4%", xl: "3%" }}
       w={{ base: "100%", md: "90%" }}
       mx={"auto"}

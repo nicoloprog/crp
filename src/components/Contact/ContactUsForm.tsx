@@ -60,8 +60,10 @@ const ContactUsForm = ({ ...rest }: BoxProps) => {
         <FormControl borderBottomColor={"rgba(0, 0, 0, 0.6)"}>
           <Input
             isRequired
-            placeholder="Entrer votre Nom"
-            backgroundColor={"rgba(35, 52, 67, 0.36)"}
+            placeholder="Entrer votre nom"
+            backgroundColor={"rgba(35, 52, 67, 0.02)"}
+            color={"black"}
+            _placeholder={{ color: "black" }}
             height={{ base: "40px", lg: "55px" }}
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -74,7 +76,8 @@ const ContactUsForm = ({ ...rest }: BoxProps) => {
           <Input
             isRequired
             placeholder="Email ou numéro de téléphone"
-            backgroundColor={"rgba(35, 52, 67, 0.36)"}
+            backgroundColor={"rgba(35, 52, 67, 0.02)"}
+            _placeholder={{ color: "black" }}
             height={{ base: "40px", lg: "55px" }}
             value={info}
             onChange={(e) => setInfo(e.target.value)}
@@ -84,8 +87,10 @@ const ContactUsForm = ({ ...rest }: BoxProps) => {
         <FormControl borderBottomColor={"rgba(0, 0, 0, 0.6)"}>
           <Textarea
             isRequired
-            placeholder="Détails sur votre condition "
-            backgroundColor={"rgba(35, 52, 67, 0.36)"}
+            placeholder="Détails sur votre projet "
+            backgroundColor={"rgba(35, 52, 67, 0.02)"}
+            color={"black"}
+            _placeholder={{ color: "black" }}
             height={{ base: "90px", lg: "150px" }}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
