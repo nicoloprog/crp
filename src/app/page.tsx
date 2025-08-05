@@ -6,6 +6,7 @@ import Works from "@/components/Works";
 import ProjetsSection from "@/components/Projets";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
+import FinancingBannert from "@/components/Financement";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Video />
       <ProjetsSection />
       <Contact />
+      <FinancingBannert />
       <Footer />
     </Box>
   );

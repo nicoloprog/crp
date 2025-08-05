@@ -77,6 +77,7 @@ const ContactUsForm = ({ ...rest }: BoxProps) => {
             isRequired
             placeholder="Email ou numéro de téléphone"
             backgroundColor={"rgba(35, 52, 67, 0.02)"}
+            color={"black"}
             _placeholder={{ color: "black" }}
             height={{ base: "40px", lg: "55px" }}
             value={info}

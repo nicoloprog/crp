@@ -79,22 +79,18 @@ export default function Contact() {
           >
             <Flex align="center" gap={4}>
               <Icon as={FaPhone} boxSize={5} color="whiteAlpha.700" />{" "}
-              {/* Icon color from image */}
               <Text>450 822-8711</Text>
             </Flex>
             <Flex align="center" gap={4}>
               <Icon as={FaInstagram} boxSize={5} color="whiteAlpha.700" />{" "}
-              {/* Icon color from image */}
               <Text>ConceptRénovationPrestige</Text>
             </Flex>
             <Flex align="center" gap={4}>
               <Icon as={FaFacebook} boxSize={5} color="whiteAlpha.700" />{" "}
-              {/* Icon color from image */}
               <Text>ConceptRénovationPrestige</Text>
             </Flex>
             <Flex align="center" gap={4}>
               <Icon as={FaEnvelope} boxSize={5} color="whiteAlpha.700" />{" "}
-              {/* Icon color from image */}
               <Text>ConceptRenoprestige@icloud.com</Text>
             </Flex>
           </VStack>
