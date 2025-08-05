@@ -137,6 +137,7 @@ export default function Hero() {
                 fontWeight="300"
                 fontSize={{ base: "1.05rem", lg: "1.6rem" }}
                 borderRadius={2}
+                color={"white"}
                 top="-7px"
                 left="-7px"
                 w="100%"
