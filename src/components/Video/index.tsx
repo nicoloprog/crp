@@ -164,7 +164,11 @@ export default function Component() {
           >
             <Flex justify="flex-end" h="100%">
               <Box w={{ base: "100%", md: "85%" }} textAlign="left">
-                <Heading fontSize={{ base: "2xl", md: "5xl" }} mt={2}>
+                <Heading
+                  fontFamily={"Cinzel"}
+                  fontSize={{ base: "2xl", md: "5xl" }}
+                  mt={2}
+                >
                   À propos
                 </Heading>
                 <Text

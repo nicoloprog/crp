@@ -8,6 +8,7 @@ export default function Contact() {
   return (
     <Flex
       id="contact"
+      fontFamily={"Cinzel"}
       direction={{ base: "column", lg: "row" }}
       backgroundColor={"#12131E"} // Dark background color from the image
       alignItems={"center"}

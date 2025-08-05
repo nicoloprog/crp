@@ -17,6 +17,7 @@ export default function FinancingBanner() {
   return (
     <Flex
       direction={isMobile ? "column" : "row"}
+      fontFamily={"Cinzel"}
       align="center"
       justify={isMobile ? "center" : "space-between"}
       px={isMobile ? 4 : 12}
