@@ -16,7 +16,7 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        // Or any other color from the Chakra UI theme or custom palette
+        bg: "#484848ff", // Or any other color from the Chakra UI theme or custom palette
         color: "white", // This sets the default text color
       },
     },

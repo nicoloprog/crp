@@ -168,6 +168,7 @@ export default function Component() {
                   À propos
                 </Heading>
                 <Text
+                  fontFamily={"Cinzel"}
                   fontSize={{ base: "sm", md: "lg" }}
                   lineHeight="tall"
                   mt={4}

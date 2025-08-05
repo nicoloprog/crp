@@ -118,7 +118,7 @@ const ContactUsForm = ({ ...rest }: BoxProps) => {
           transition="all 0.4s ease"
           cursor="pointer"
         >
-          <Text fontSize={{ base: "0.7rem", lg: "1rem" }} fontWeight="400">
+          <Text fontSize={{ base: "0.9rem", lg: "1rem" }} fontWeight="400">
             Soumettre
           </Text>
         </Button>
