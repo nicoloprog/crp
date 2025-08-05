@@ -104,6 +104,7 @@ const ContactUsForm = ({ ...rest }: BoxProps) => {
           fontWeight="100"
           fontSize={{ base: "1.05rem", lg: "1.6rem" }}
           borderRadius={2}
+          color={"white"}
           bg="#C39E6F"
           minW={{ base: "90%", lg: "100%" }}
           _hover={{
