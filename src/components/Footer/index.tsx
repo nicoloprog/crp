@@ -18,7 +18,7 @@ const links = [
 
 const accounts = [
   {
-    url: "https://www.facebook.com/profile.php?id=61575210156190", // your original link
+    url: "https://www.facebook.com/profile.php?id=61575210156190&mibextid=wwXIfr&rdid=BqUi1G3Lr9NTQLMy&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GVHhW8DPQ%2F%3Fmibextid%3DwwXIfr", // your original link
     label: "Facebook Account",
     type: "Facebook",
     icon: <FaFacebook />,

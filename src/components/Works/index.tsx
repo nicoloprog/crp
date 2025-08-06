@@ -14,10 +14,10 @@ const App = () => {
   if (!hasMounted) return null; // 👈 Prevent mismatch on initial SSR render
 
   const images = [
-    { title: "Cuisine", imageUrl: "/cuisine.jpeg" },
+    { title: "Cuisine", imageUrl: "/gallerie4.jpg" },
     { title: "Salle de bain", imageUrl: "/salledebain.jpeg" },
-    { title: "Projets intérieurs", imageUrl: "/interieur.png" },
-    { title: "Projets Extérieurs", imageUrl: "/exterieur.png" },
+    { title: "Projets intérieurs", imageUrl: "/interieur.jpg" },
+    { title: "Projets Extérieurs", imageUrl: "/exterieur1.jpg" },
   ];
 
   return (
@@ -82,7 +82,7 @@ const ImageGalleryItem: React.FC<ImageGalleryItemProps> = ({
         position="absolute"
         top="0"
         left="0"
-        filter="brightness(0.55)"
+        filter="brightness(0.65)"
         transition="transform 0.3s ease"
       />
       <Flex

@@ -54,7 +54,13 @@ const Header = () => {
             <Box
               display={{ base: "inherit", lg: "" }}
               position={"relative"}
-              w={{ base: "100px", md: "130px", lg: "190px", xl: "220px" }}
+              w={{
+                base: "100px",
+                md: "130px",
+                lg: "160px",
+                xl: "190px",
+                "2xl": "220px",
+              }}
               aspectRatio={1 / 2}
             >
               <NextImage
@@ -69,11 +75,11 @@ const Header = () => {
           <HeaderBurgerMenu />
         </Flex>
         <Flex
-          gap={{ base: 2, md: 4, lg: 6, xl: 8 }}
+          gap={{ base: 2, lg: 1, xl: 4, "2xl": 6 }}
           align="center"
           borderRadius="full"
           py={2}
-          px={6}
+          paddingLeft={{ base: 0, lg: -2, xl: 4, "2xl": 5 }}
           display={{ base: "none", md: "flex" }}
         >
           {sectionLinks.map((link) => (

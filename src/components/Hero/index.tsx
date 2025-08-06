@@ -39,7 +39,7 @@ export default function Hero() {
     lg: "/crpAccueil.mov", // desktop
   });
   return (
-    <Box position="relative" w="full" minH="100svh" overflow="hidden">
+    <Box position="relative" w="full" minH="100svh">
       {!isLoaded && (
         <Image
           src={"/poster.png"}
@@ -71,14 +71,23 @@ export default function Hero() {
         objectFit="cover"
         zIndex={0}
       />
-      <Flex w={"100%"} h="100%">
+      <Flex>
         <Flex
           position="absolute"
-          top={{ base: "57.5%", lg: "60%" }}
+          top={{
+            base: "57.5%",
+            sm: "57%", // ~480px
+            md: "58%",
+            lg: "53%",
+            xl: "55%",
+            "2xl": "60%",
+          }}
+          // Adjust `left` if needed, or consider `inset` for cleaner code
           left={{ base: "2.25%", lg: "5%" }}
           direction="column"
-          w={"full"}
-          maxH="100svh"
+          // Adjust width to prevent overflow on the right, accounting for `left`
+          width={{ base: "95%", sm: "90%", lg: "85%" }} // Example: Reduced width
+          // maxH="100svh" // Keep this, but also ensure content inside fits
           m={{ base: "0 0.5%", lg: "0%" }}
           gap={{ base: 3, lg: 3 }}
           zIndex={1000}
@@ -88,8 +97,16 @@ export default function Hero() {
             <AnimatedHeading
               id="heroTitle"
               fontFamily={"Cinzel"}
-              fontSize={{ base: "2rem", xl: "4rem" }}
-              maxW={{ base: "70%", lg: "75%" }}
+              fontSize={{
+                base: "clamp(1.75rem, 6vw, 2.25rem)", // Using clamp for fluid font size
+                sm: "clamp(1.75rem, 5.5vw, 2.25rem)",
+                md: "clamp(2rem, 5vw, 2.5rem)",
+                lg: "clamp(2.5rem, 4vw, 3.5rem)",
+                xl: "clamp(2.75rem, 3.75vw, 3.75rem)",
+                "2xl": "clamp(3rem, 3.5vw, 4rem)",
+              }}
+              // Adjust maxW to ensure it doesn't push beyond the parent's width
+              maxW={{ base: "90%", md: "80%", lg: "75%" }} // Slightly reduced from 70/75%
               fontWeight={"600"}
               lineHeight="95%"
               opacity={0}
@@ -101,8 +118,23 @@ export default function Hero() {
             <AnimatedHeading
               id="textHero"
               fontFamily={"Cinzel"}
-              fontSize={{ base: "0.90rem", lg: "1.5rem" }}
-              maxW={{ base: "85%", lg: "35%" }}
+              fontSize={{
+                base: "clamp(0.8rem, 2.5vw, 1rem)", // Using clamp
+                sm: "clamp(0.8rem, 2.2vw, 1rem)",
+                md: "clamp(0.9rem, 2vw, 1.1rem)",
+                lg: "clamp(1rem, 1.5vw, 1.35rem)",
+                xl: "clamp(1.1rem, 1.4vw, 1.45rem)",
+                "2xl": "clamp(1.2rem, 1.3vw, 1.5rem)",
+              }}
+              // Adjust maxW to ensure it doesn't push beyond the parent's width
+              maxW={{
+                base: "90%", // Slightly reduced
+                sm: "85%",
+                md: "60%", // Adjusted for md to give more room
+                lg: "65%",
+                xl: "68%",
+                "2xl": "70%",
+              }}
               fontWeight="400"
               lineHeight="115%"
               opacity={0}
@@ -112,9 +144,13 @@ export default function Hero() {
             </AnimatedHeading>
           </Box>
 
-          <NextLink href={""}>
+          <NextLink href={"#contact"}>
             <Box
-              m={{ base: "5% 1.5%", lg: "1.5% 0.25%" }}
+              m={{
+                base: "5% 1.5%",
+                md: "3% 0.5%",
+                lg: "1.5% 0.25%",
+              }}
               position="relative"
               display="inline-block"
               role="group"
@@ -164,8 +200,13 @@ export default function Hero() {
       ></Box>
       <Box
         position="absolute"
-        bottom={{ base: "0%", lg: "0%" }}
-        width={{ base: "92%", lg: "65%" }}
+        bottom={{
+          base: "0%",
+          lg: "7%",
+          xl: "5%",
+          "2xl": "0%",
+        }}
+        width={{ base: "92%", lg: "77%", xl: "76%", "2xl": "75%" }}
         m={{ base: "0 1.5%", lg: "0 0 0 4.25%" }}
         borderRadius={4}
         background="linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.1))"

@@ -82,7 +82,7 @@ export default function FinancingBanner() {
             color="white"
             size={isMobile ? "md" : "lg"}
           >
-            Global Finance
+            Global Payment
           </Button>
         </Link>
       </Flex>
