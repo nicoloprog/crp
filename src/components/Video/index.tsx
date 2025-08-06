@@ -173,7 +173,7 @@ export default function Component() {
                 </Heading>
                 <Text
                   fontFamily={"Cinzel"}
-                  fontSize={{ base: "sm", md: "lg" }}
+                  fontSize={{ base: "sm", md: "md" }}
                   lineHeight="tall"
                   mt={4}
                 >

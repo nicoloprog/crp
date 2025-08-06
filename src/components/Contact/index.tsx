@@ -90,7 +90,7 @@ export default function Contact() {
               <Icon as={FaFacebook} boxSize={5} color="whiteAlpha.700" />{" "}
               <Text>ConceptRénovationPrestige</Text>
             </Flex>
-            <Flex align="center" gap={4}>
+            <Flex align="center" gap={4} maxW={{ base: "70%", lg: "100%" }}>
               <Icon as={FaEnvelope} boxSize={5} color="whiteAlpha.700" />{" "}
               <Text>ConceptRenoprestige@icloud.com</Text>
             </Flex>
