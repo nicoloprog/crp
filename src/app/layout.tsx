@@ -4,7 +4,7 @@ import ChakraProviders from "@/contexts/ChakraProviders";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Concept Renovation Prestige",
+  title: "Concept Rénovation Prestige",
   description:
     "De la conception à la réalisation, nous construisons des espaces durables et sur mesure.",
 };
