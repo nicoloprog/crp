@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import ChakraProviders from "@/contexts/ChakraProviders";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Concept Renovation Prestige",
@@ -15,10 +16,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <meta
-        name="google-site-verification"
-        content="JKL3omtAk8ucptzVUFxaVSyOiYrOfDrvdoQ1HGZlaNo"
-      />
+      <head>
+        <meta
+          name="google-site-verification"
+          content="JKL3omtAk8ucptzVUFxaVSyOiYrOfDrvdoQ1HGZlaNo"
+        />
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-RKR1ZZ8PQ8"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-RKR1ZZ8PQ8');
+          `}
+        </Script>
+      </head>
       <body>
         <style>
           @import
