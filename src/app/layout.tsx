@@ -1,12 +1,12 @@
-"use client";
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import ChakraProviders from "@/contexts/ChakraProviders";
 
-// export const metadata: Metadata = {
-//   title: "Concept Renovation Prestige",
-//   description:
-//     "De la conception à la réalisation, nous construisons des espaces durables et sur mesure.",
-// };
+export const metadata: Metadata = {
+  title: "Concept Renovation Prestige",
+  description:
+    "De la conception à la réalisation, nous construisons des espaces durables et sur mesure.",
+};
 
 export default function RootLayout({
   children,
@@ -15,6 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
+      <meta
+        name="google-site-verification"
+        content="JKL3omtAk8ucptzVUFxaVSyOiYrOfDrvdoQ1HGZlaNo"
+      />
       <body>
         <style>
           @import
