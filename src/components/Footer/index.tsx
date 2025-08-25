@@ -1,11 +1,14 @@
 "use client";
 import {
+  Box,
   Stack,
   HStack,
   Link,
   Image,
   IconButton,
   LinkProps,
+  Text,
+  Divider,
 } from "@chakra-ui/react";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 
@@ -18,78 +21,95 @@ const links = [
 
 const accounts = [
   {
-    url: "https://www.facebook.com/profile.php?id=61575210156190&mibextid=wwXIfr&rdid=BqUi1G3Lr9NTQLMy&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GVHhW8DPQ%2F%3Fmibextid%3DwwXIfr", // your original link
+    url: "https://www.facebook.com/profile.php?id=61575210156190&mibextid=wwXIfr",
     label: "Facebook Account",
     type: "Facebook",
     icon: <FaFacebook />,
   },
   {
-    url: "https://www.instagram.com/concept_renovation_prestige/", // your original link
+    url: "https://www.instagram.com/concept_renovation_prestige/",
     label: "Instagram Account",
     type: "instagram",
     icon: <FaInstagram />,
   },
 ];
 
+const CustomLink = (props: LinkProps) => (
+  <Link
+    fontSize="sm"
+    fontWeight="medium"
+    color="gray.300"
+    _hover={{ color: "white", textDecoration: "none" }}
+    transition="0.3s"
+    {...props}
+  />
+);
+
 const Footer = () => {
   return (
-    <Stack
-      maxW="5xl"
-      marginInline="auto"
-      p={8}
-      spacing={{ base: 4, md: 0 }}
-      justifyContent="space-between"
-      alignItems="center"
-      direction={{ base: "column", md: "row" }}
+    <Box
+      bgGradient="linear(to-r, gray.900, gray.800)"
+      color="gray.300"
+      pt={10}
+      pb={6}
+      px={6}
     >
-      {/* Logo */}
-      <Link href="/" _hover={{ textDecoration: "none" }}>
-        <Image w="100px" src="/crp.png" alt="TemplatesKart" />
-      </Link>
-
-      {/* Same links for desktop & mobile */}
+      {/* Main content */}
       <Stack
-        spacing={4}
-        paddingBottom={{ base: 8, md: 0 }}
+        maxW="7xl"
+        marginInline="auto"
+        spacing={6}
+        justifyContent="space-between"
         alignItems="center"
         direction={{ base: "column", md: "row" }}
       >
-        {links.map((link, index) => (
-          <CustomLink key={index} href={link.href}>
-            {link.label}
-          </CustomLink>
-        ))}
+        {/* Logo */}
+        <Link href="/" _hover={{ textDecoration: "none" }}>
+          <Image w="100px" src="/crp.png" alt="Concept Renovation Prestige" />
+        </Link>
+
+        {/* Links */}
+        <Stack
+          spacing={6}
+          alignItems="center"
+          mb={{ base: 2, md: 0 }}
+          direction={{ base: "column", md: "row" }}
+        >
+          {links.map((link, index) => (
+            <CustomLink key={index} href={link.href}>
+              {link.label}
+            </CustomLink>
+          ))}
+        </Stack>
+
+        {/* Social Icons */}
+        <HStack spacing={5}>
+          {accounts.map((sc, index) => (
+            <IconButton
+              key={index}
+              as={Link}
+              isExternal
+              href={sc.url}
+              aria-label={sc.label}
+              colorScheme="gray"
+              icon={sc.icon}
+              rounded="md"
+            />
+          ))}
+        </HStack>
       </Stack>
 
-      {/* Social Icons */}
-      <HStack spacing={5}>
-        {accounts.map((sc, index) => (
-          <IconButton
-            key={index}
-            as={Link}
-            isExternal
-            href={sc.url}
-            aria-label={sc.label}
-            colorScheme="gray"
-            icon={sc.icon}
-            rounded="md"
-          />
-        ))}
-      </HStack>
-    </Stack>
-  );
-};
+      {/* Separator */}
+      <Divider borderColor="gray.700" my={6} />
 
-const CustomLink = ({ children, href, ...props }: LinkProps) => {
-  return (
-    <Link
-      href={href}
-      fontSize="sm"
-      _hover={{ textDecoration: "underline" }}
-      {...props}
-    >
-      {children}
-    </Link>
+      {/* Bottom note */}
+      <Text fontSize="xs" textAlign="center" color="gray.500">
+        © {new Date().getFullYear()} Concept Rénovation Prestige · Fait par{" "}
+        <Text as="span" color="blue.400" fontWeight="semibold">
+          Nicolas Paquette
+        </Text>
+      </Text>
+    </Box>
   );
 };
 
