@@ -73,7 +73,7 @@ export default function FinancingBanner() {
 
         {/* Single Button */}
         <Link
-          href="https://www.globalfinancegroupe.com/demande-de-credit/"
+          href="https://www.globalpayments.com/fr-ca/point-de-vente/acheter-maintenant-payer-plus-tard"
           isExternal
         >
           <Button
