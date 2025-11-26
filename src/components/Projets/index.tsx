@@ -6,7 +6,6 @@ import {
   Image,
   SimpleGrid,
   useBreakpointValue,
-  Flex,
 } from "@chakra-ui/react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
@@ -16,7 +15,6 @@ const imageSources = [
   "/gallerie1.jpg",
   "/gallerie2.jpg",
   "/gallerie3.jpg",
-  // "/cuisine.jpeg",
   "/gallerie5.jpg",
   "/gallerie6.jpg",
   "/gallerie7.jpg",
@@ -63,31 +61,14 @@ export default function ProjetsCarousel() {
       py={10}
       bg="white"
     >
-      {/* ⭐ Heading + Number inline, aligned right */}
-      <Flex justify="space-between" align="center" gap={4} mb={6}>
-        <Heading
-          color="gray.700"
-          fontWeight="500"
-          fontFamily="Cinzel"
-          fontSize={{ base: "1.5rem", lg: "3.15rem" }}
-        >
-          PROJETS
-        </Heading>
-
-        <Box
-          bg="rgba(195, 158, 111, 1)"
-          color="white"
-          px={{ base: 4, md: 5 }}
-          py={{ base: 1, md: 2 }}
-          rounded="full"
-          fontWeight="semibold"
-          fontSize={{ base: "sm", md: "xl" }}
-          boxShadow="md"
-          border="1px solid #ddd"
-        >
-          5867 - 4334 - 01
-        </Box>
-      </Flex>
+      <Heading
+        color="gray.700"
+        fontWeight="500"
+        fontFamily="Cinzel"
+        fontSize={{ base: "1.5rem", lg: "3.15rem" }}
+      >
+        PROJETS
+      </Heading>
 
       {isMobile ? (
         // ✅ Mobile Grid Layout

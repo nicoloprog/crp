@@ -7,9 +7,36 @@ const BurgerMenuIcon = ({ ...rest }: IconProps) => (
     viewBox="10 10 48 37"
     {...rest}
   >
-    <rect x="0.5" y="23" width="47" height="3" rx="1" fill="#C39E6F" />
-    <rect x="0.5" y="29" width="47" height="3" rx="1" fill="#C39E6F" />
-    <rect x="0.5" y="35" width="47" height="3" rx="1" fill="#C39E6F" />
+    <rect
+      x="0.5"
+      y="23"
+      width="50"
+      height="3"
+      rx="1"
+      fill="#C39E6F"
+      stroke="#000000ff"
+      strokeWidth="0.25"
+    />
+    <rect
+      x="0.5"
+      y="30"
+      width="50"
+      height="3"
+      rx="1"
+      fill="#C39E6F"
+      stroke="#000000ff"
+      strokeWidth="0.25"
+    />
+    <rect
+      x="0.5"
+      y="37"
+      width="50"
+      height="3"
+      rx="1"
+      fill="#C39E6F"
+      stroke="#000000ff"
+      strokeWidth="0.25"
+    />
   </Icon>
 );
 

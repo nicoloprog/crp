@@ -9,6 +9,7 @@ import {
   LinkProps,
   Text,
   Divider,
+  Flex,
 } from "@chakra-ui/react";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 
@@ -52,7 +53,7 @@ const Footer = () => {
       color="gray.300"
       pt={10}
       pb={6}
-      px={6}
+      px={4}
     >
       {/* Main content */}
       <Stack
@@ -102,13 +103,44 @@ const Footer = () => {
       {/* Separator */}
       <Divider borderColor="gray.700" my={6} />
 
-      {/* Bottom note */}
-      <Text fontSize="xs" textAlign="center" color="gray.500">
-        © {new Date().getFullYear()} Concept Rénovation Prestige · Fait par{" "}
-        <Text as="span" color="blue.400" fontWeight="semibold">
-          Nicolas Paquette
+      <Box position="relative" mt={6}>
+        {/* Centered bottom note */}
+        <Text
+          fontSize="xs"
+          textAlign={{ base: "left", md: "center" }}
+          color="gray.500"
+        >
+          © {new Date().getFullYear()} Développé par{" "}
+          <Link
+            href="https://www.grandiflores.com/naturopathe"
+            color="blue.400"
+            fontWeight="semibold"
+            isExternal
+            _hover={{ textDecoration: "underline" }}
+          >
+            Nicolas Paquette
+          </Link>
         </Text>
-      </Text>
+
+        {/* Number badge aligned to the right */}
+        <Box
+          position="absolute"
+          right={0}
+          top="50%"
+          transform="translateY(-50%)"
+          bg="rgba(195, 159, 111, 0.93)"
+          color="white"
+          px={{ base: 2, md: 4 }}
+          py={{ base: 0, md: 1 }}
+          rounded="full"
+          fontWeight={{ base: "semibold", md: "semibold" }}
+          fontSize={{ base: "sm", md: "xl" }}
+          boxShadow="md"
+          border="1px solid #ddd"
+        >
+          RBQ: 5867 - 4334 - 01
+        </Box>
+      </Box>
     </Box>
   );
 };
