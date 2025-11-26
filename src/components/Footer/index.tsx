@@ -110,7 +110,7 @@ const Footer = () => {
           textAlign={{ base: "left", md: "center" }}
           color="gray.500"
         >
-          © {new Date().getFullYear()} Développé par{" "}
+          © {new Date().getFullYear()} Par{" "}
           <Link
             href="https://www.grandiflores.com/naturopathe"
             color="blue.400"
