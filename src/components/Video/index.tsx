@@ -107,7 +107,7 @@ export default function Component() {
             <Box
               as="video"
               ref={videoRef}
-              src="/conceptrenovationprestige.mp4"
+              src="/conceptrenovationprestige2.mp4"
               muted
               playsInline
               autoPlay
