@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Flex, Container, Text, Heading } from "@chakra-ui/react";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 
 // Types for props
 type PlayIconProps = {
@@ -30,71 +30,33 @@ const PlayIcon = ({ width, height }: PlayIconProps) => (
 
 export default function Component() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  // const [isVideoActive, setIsVideoActive] = useState(false);
-
-  // const handleVideoPlay = () => {
-  //   setIsVideoActive(true);
-  //   if (videoRef.current) {
-  //     videoRef.current.muted = false;
-
-  //     // Typage étendu pour supporter les méthodes spécifiques aux navigateurs
-  //     const video = videoRef.current as HTMLVideoElement & {
-  //       webkitRequestFullscreen?: () => void;
-  //       msRequestFullscreen?: () => void;
-  //     };
-
-  //     if (video.requestFullscreen) {
-  //       video.requestFullscreen();
-  //     } else if (video.webkitRequestFullscreen) {
-  //       video.webkitRequestFullscreen();
-  //     } else if (video.msRequestFullscreen) {
-  //       video.msRequestFullscreen();
-  //     }
-
-  //     videoRef.current.controls = true;
-  //   }
-  // };
   const [isVideoActive, setIsVideoActive] = useState(false);
 
   const handleVideoPlay = () => {
-    if (!videoRef.current) return;
-
-    const video = videoRef.current as HTMLVideoElement & {
-      webkitEnterFullscreen?: () => void;
-      webkitRequestFullscreen?: () => void;
-    };
-
     setIsVideoActive(true);
-
-    // Unmute
-    video.muted = false;
-
-    // Start playback
-    video.play();
-
-    // ---- Fullscreen handling ----
-
-    // iPhone (best and most reliable)
-    if (video.webkitEnterFullscreen) {
-      video.webkitEnterFullscreen();
-    }
-
-    // Android / Desktop
-    else if (video.requestFullscreen) {
-      video.requestFullscreen();
-    } else if (video.webkitRequestFullscreen) {
-      video.webkitRequestFullscreen();
-    }
-
-    // show controls after clicking
-    video.controls = true;
-  };
-
-  useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.muted = true; // ✔ autoplay still works, fullscreen allowed
+      videoRef.current.muted = false;
+
+      // Typage étendu pour supporter les méthodes spécifiques aux navigateurs
+      const video = videoRef.current as HTMLVideoElement & {
+        webkitRequestFullscreen?: () => void;
+        msRequestFullscreen?: () => void;
+        webkitEnterFullscreen?: () => void;
+      };
+
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+      } else if (video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen();
+      } else if (video.msRequestFullscreen) {
+        video.msRequestFullscreen();
+      }
+
+      videoRef.current.controls = true;
     }
-  }, []);
+  };
 
   return (
     <Container
@@ -149,11 +111,12 @@ export default function Component() {
               as="video"
               ref={videoRef}
               src="/conceptrenovationprestige2.mp4"
-              autoPlay
+              muted
               playsInline
+              autoPlay
               loop
               title="Concept Renovation Prestige Introduction"
-              objectFit="cover"
+              objectFit="contain"
               w="100%"
               h="100%"
             />
