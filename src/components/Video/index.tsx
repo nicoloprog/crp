@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Flex, Container, Text, Heading } from "@chakra-ui/react";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 
 // Types for props
 type PlayIconProps = {
@@ -30,71 +30,33 @@ const PlayIcon = ({ width, height }: PlayIconProps) => (
 
 export default function Component() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  // const [isVideoActive, setIsVideoActive] = useState(false);
-
-  // const handleVideoPlay = () => {
-  //   setIsVideoActive(true);
-  //   if (videoRef.current) {
-  //     videoRef.current.muted = false;
-
-  //     // Typage étendu pour supporter les méthodes spécifiques aux navigateurs
-  //     const video = videoRef.current as HTMLVideoElement & {
-  //       webkitRequestFullscreen?: () => void;
-  //       msRequestFullscreen?: () => void;
-  //     };
-
-  //     if (video.requestFullscreen) {
-  //       video.requestFullscreen();
-  //     } else if (video.webkitRequestFullscreen) {
-  //       video.webkitRequestFullscreen();
-  //     } else if (video.msRequestFullscreen) {
-  //       video.msRequestFullscreen();
-  //     }
-
-  //     videoRef.current.controls = true;
-  //   }
-  // };
   const [isVideoActive, setIsVideoActive] = useState(false);
 
   const handleVideoPlay = () => {
-    if (!videoRef.current) return;
-
-    const video = videoRef.current as HTMLVideoElement & {
-      webkitEnterFullscreen?: () => void;
-      webkitRequestFullscreen?: () => void;
-    };
-
     setIsVideoActive(true);
-
-    // Unmute
-    video.muted = false;
-
-    // Start playback
-    video.play();
-
-    // ---- Fullscreen handling ----
-
-    // iPhone (best and most reliable)
-    if (video.webkitEnterFullscreen) {
-      video.webkitEnterFullscreen();
-    }
-
-    // Android / Desktop
-    else if (video.requestFullscreen) {
-      video.requestFullscreen();
-    } else if (video.webkitRequestFullscreen) {
-      video.webkitRequestFullscreen();
-    }
-
-    // show controls after clicking
-    video.controls = true;
-  };
-
-  useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.muted = true; // ✔ autoplay still works, fullscreen allowed
+      videoRef.current.muted = false;
+
+      // Typage étendu pour supporter les méthodes spécifiques aux navigateurs
+      const video = videoRef.current as HTMLVideoElement & {
+        webkitRequestFullscreen?: () => void;
+        msRequestFullscreen?: () => void;
+        webkitEnterFullscreen?: () => void;
+      };
+
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+      } else if (video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen();
+      } else if (video.msRequestFullscreen) {
+        video.msRequestFullscreen();
+      }
+
+      videoRef.current.controls = true;
     }
-  }, []);
+  };
 
   return (
     <Container
@@ -126,9 +88,9 @@ export default function Component() {
           {/* VIDEO CARD */}
           <Box
             position={{ base: "relative", md: "absolute" }}
-            left={{ base: "auto", md: "10%" }}
-            w={{ base: "100%", md: "38%" }}
-            maxH={{ base: "300px", md: "70svh" }}
+            left={{ base: "auto", md: "-10%" }}
+            w={{ base: "100%", md: "58%" }}
+            maxH={{ base: "300px", md: "45svh" }}
             borderRadius="15px"
             overflow="hidden"
             boxShadow="0 20px 40px rgba(0, 0, 0, 0.71), 0 0 0 1px rgba(255, 255, 255, 0.1) inset"
@@ -148,12 +110,13 @@ export default function Component() {
             <Box
               as="video"
               ref={videoRef}
-              src="/conceptrenovationprestige2.mp4"
-              autoPlay
+              src="/conc.mp4"
+              muted
               playsInline
+              autoPlay
               loop
               title="Concept Renovation Prestige Introduction"
-              objectFit="cover"
+              objectFit="contain"
               w="100%"
               h="100%"
             />
@@ -171,8 +134,8 @@ export default function Component() {
               onClick={handleVideoPlay}
             >
               <PlayIcon
-                height={{ base: "40px", md: "95px" }}
-                width={{ base: "40px", md: "95px" }}
+                height={{ base: "40px", md: "75px" }}
+                width={{ base: "40px", md: "75px" }}
               />
             </Box>
           </Box>
@@ -184,7 +147,7 @@ export default function Component() {
             maxW={{ base: "100%", md: "60%" }}
             w="100%"
             mt={{ base: 6, md: 0 }}
-            h={{ base: "auto", md: "70svh" }}
+            h={{ base: "auto", md: "65svh" }}
             borderRadius="15px"
             boxShadow="0 20px 40px rgba(0, 0, 0, 0.71), 0 0 0 1px rgba(255, 255, 255, 0.1) inset"
             p={{ base: 4, md: 10 }}
@@ -213,14 +176,14 @@ export default function Component() {
                 </Heading>
                 <Text
                   fontFamily={"Cinzel"}
-                  fontSize={{ base: "sm", md: "md" }}
+                  fontSize={{ base: "sm", md: "xl" }}
                   lineHeight="tall"
                   mt={4}
                 >
-                  Découvrez l&apos;excellence en rénovation résidentielle avec
-                  notre entreprise de projets clés en main. Nous vous
-                  accompagnons de la conception à la réalisation, en prenant en
-                  charge chaque étape avec rigueur et transparence.
+                  Découvrez l&apos;excellence en rénovation rive sud avec notre
+                  entreprise de projets clés en main. Nous vous accompagnons de
+                  la conception à la réalisation, en prenant en charge chaque
+                  étape avec rigueur et transparence.
                   <br />
                   <br />
                   Notre professionnalisme transforme vos espaces de vie en

@@ -5,7 +5,7 @@ import ChakraProviders from "@/contexts/ChakraProviders";
 export const metadata: Metadata = {
   title: "Rénovation rive-sud montréal | résidentiel et commercial",
   description:
-    "Projets de rénovations intérieur et extérieur sur la rive sud de montreal : cuisine, salle de bain, sous-sol et projets extérieurs.",
+    "Rénovation intérieur et extérieur rive sud de montreal : cuisine, salle de bain, sous-sol et projets extérieurs.",
   keywords: [
     "rénovation rive sud",
     "rénovation rive-sud de montréal",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Rénovation Rive-Sud Montréal | Résidentiel & Commercial",
     description:
-      "Expert en rénovation intérieure et extérieure sur la Rive-Sud de Montréal. Cuisine, salle de bain, sous-sol et projets extérieurs. Soumission gratuite.",
+      "Expert en rénovation intérieure et extérieure sur la Rive-Sud de Montréal. Cuisine, salle de bain, sous-sol. renovation rive sud. renovation montreal rive sud.",
     url: "https://www.conceptrenovationprestige.com",
     siteName: "Concept Rénovation Prestige",
     locale: "fr_CA",
@@ -40,6 +40,29 @@ export default function RootLayout({
         <meta
           name="google-site-verification"
           content="JKL3omtAk8ucptzVUFxaVSyOiYrOfDrvdoQ1HGZlaNo"
+        />
+        <meta name="google" content="all" key="sitelinks" />
+        <meta name="googlebot" content="all" />
+        <meta name="googlebot-news" content="all" />
+        <title>
+          Rénovation résidentiel et commercial - Rive-Sud | Montréal
+        </title>
+        <meta
+          name="description"
+          content="Expert en rénovation intérieure et extérieure Montréal. Cuisine, salle de bain, sous-sol. renovation rive sud financement"
+          key="desc"
+        />
+        <meta
+          property="og:title"
+          content="Rénovation Rive-Sud Montréal | Résidentiel & Commercial"
+        />
+        <meta
+          property="og:description"
+          content="Expert en rénovation intérieure et extérieure Montréal. Cuisine, salle de bain, sous-sol. renovation rive sud financement"
+        />
+        <meta
+          property="og:image"
+          content="https://conceptrenovationprestige.com/public/gallerie4.jpg"
         />
       </head>
       <body>

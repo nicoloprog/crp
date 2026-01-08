@@ -12,10 +12,12 @@ import "keen-slider/keen-slider.min.css";
 import { useEffect } from "react";
 
 const imageSources = [
+  "/gallerie.jpg",
   "/gallerie1.jpg",
   "/gallerie2.jpg",
   "/gallerie3.jpg",
   "/gallerie5.jpg",
+  "/gallerie0.jpg",
   "/gallerie6.jpg",
   "/gallerie7.jpg",
 ];
@@ -77,7 +79,7 @@ export default function ProjetsCarousel() {
             <Box key={index} borderRadius="md" overflow="hidden">
               <Image
                 src={src}
-                alt={`Projet ${index + 1}`}
+                alt={`Renovation rive sud ${index + 1}`}
                 objectFit="cover"
                 w="100%"
                 h="100%"

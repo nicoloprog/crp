@@ -65,7 +65,7 @@ const Header = () => {
             >
               <NextImage
                 src={`/crp.png`}
-                alt={`Concept Renovation Prestige`}
+                alt={`renovation rive sud`}
                 fill
                 style={{ objectFit: "contain" }}
                 sizes="100%"

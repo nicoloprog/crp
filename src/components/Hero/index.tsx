@@ -43,7 +43,7 @@ export default function Hero() {
       {!isLoaded && (
         <Image
           src={"/poster.png"}
-          alt="Loading preview"
+          alt="renovation montreal"
           position="absolute"
           top={0}
           left={0}
