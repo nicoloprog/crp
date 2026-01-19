@@ -144,7 +144,9 @@ export default function Hero() {
             </AnimatedHeading>
           </Box>
 
-          <NextLink href={"#contact"}>
+          <NextLink
+            href={"https://link.billdr.co/concept-renovation-prestige-inc"}
+          >
             <Box
               m={{
                 base: "5% 1.5%",
