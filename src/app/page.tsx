@@ -5,8 +5,9 @@ import Video from "@/components/Video";
 import Works from "@/components/Works";
 import ProjetsSection from "@/components/Projets";
 import Footer from "@/components/Footer";
-import Contact from "@/components/Contact";
-import FinancingBannert from "@/components/Financement";
+// import Contact from "@/components/Contact";
+import FinancingBanner from "@/components/Financement";
+import SoumissionBanner from "@/components/Soumission";
 
 export default function Home() {
   return (
@@ -15,8 +16,9 @@ export default function Home() {
       <Works />
       <Video />
       <ProjetsSection />
-      <Contact />
-      <FinancingBannert />
+      {/* <Contact /> */}
+      <SoumissionBanner />
+      <FinancingBanner />
       <Footer />
     </Box>
   );

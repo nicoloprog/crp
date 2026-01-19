@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 
-export default function FinancingBanner() {
+export default function SoumissionBanner() {
   const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
@@ -29,8 +29,8 @@ export default function FinancingBanner() {
       {/* Background image */}
       <Box position="absolute" inset="0" zIndex={0}>
         <Image
-          src="/bgfi.png" // replace with your image path
-          alt="Construction"
+          src="/finance.png" // replace with your image path
+          alt="Renovation rive sud"
           fill
           style={{ objectFit: "cover" }}
         />
@@ -51,29 +51,9 @@ export default function FinancingBanner() {
         maxW={"100%"}
         w="full"
       >
-        {/* Text */}
-        <Flex
-          direction="column"
-          align={isMobile ? "center" : "flex-start"}
-          textAlign={isMobile ? "center" : "left"}
-          gap={2}
-        >
-          <Heading
-            fontSize={isMobile ? "xl" : "2xl"}
-            fontWeight="bold"
-            color="white"
-          >
-            Financement disponible !
-          </Heading>
-          <Text fontSize={isMobile ? "sm" : "md"} color="white">
-            Que ce soit pour une rénovation ou une construction complète, nous
-            proposons des plans de paiement adaptés à votre budget.
-          </Text>
-        </Flex>
-
         {/* Single Button */}
         <Link
-          href="https://www.globalpayments.com/fr-ca/point-de-vente/acheter-maintenant-payer-plus-tard"
+          href="https://link.billdr.co/concept-renovation-prestige-inc"
           isExternal
         >
           <Button
@@ -82,9 +62,21 @@ export default function FinancingBanner() {
             color="white"
             size={isMobile ? "md" : "lg"}
           >
-            Global Payment
+            Soumission en ligne
           </Button>
         </Link>
+        {/* Text */}
+        <Flex
+          direction="column"
+          align={isMobile ? "center" : "flex-end"}
+          textAlign={isMobile ? "center" : "left"}
+          gap={2}
+        >
+          <Text fontSize={isMobile ? "sm" : "md"} color="white">
+            Obtenez une soumission détaillée et transparente pour vos travaux de
+            construction.
+          </Text>
+        </Flex>
       </Flex>
     </Flex>
   );
