@@ -64,7 +64,7 @@ const Header = () => {
               aspectRatio={1 / 2}
             >
               <NextImage
-                src={`/crp.png`}
+                src={`/crpnoir.png`}
                 alt={`renovation rive sud`}
                 fill
                 style={{ objectFit: "contain" }}
