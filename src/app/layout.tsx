@@ -74,6 +74,10 @@ export default function RootLayout({
           <Header />
           {children}
         </ChakraProviders>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-RKR1ZZ8PQ8"
+        ></script>
       </body>
     </html>
   );
