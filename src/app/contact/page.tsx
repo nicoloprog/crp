@@ -2,7 +2,6 @@
 
 import { Box, Flex, Text, Heading, Icon, VStack } from "@chakra-ui/react";
 import { FaPhone, FaEnvelope, FaInstagram, FaFacebook } from "react-icons/fa";
-import ContactUsForm from "@/components/Contact/ContactUsForm"; // Assuming this is where your form component is
 
 export default function Contact() {
   return (
@@ -30,7 +29,7 @@ export default function Contact() {
         {/* LEFT PANEL */}
         <Box
           bg="#9C8265" // Darker brown/grey background from the image
-          w={{ base: "100%", lg: "40%" }}
+          w={"100%"}
           p={{ base: 8, lg: 12 }}
           display="flex"
           flexDirection="column"
@@ -67,7 +66,7 @@ export default function Contact() {
           <Heading size="lg" mb={4} zIndex="1">
             NOUS JOINDRE
           </Heading>
-          <Text fontSize="sm" mb={12} zIndex="1">
+          <Text fontSize="md" mb={12} zIndex="1">
             Que ce soit pour une question, une idée ou une demande de
             soumission, notre équipe est là pour vous écouter. Écrivez-nous, et
             bâtissons ensemble.
@@ -78,7 +77,7 @@ export default function Contact() {
             spacing={7}
             zIndex="1"
           >
-            <Flex align="center" gap={4}>
+            <Flex align="center" gap={4} fontSize="md">
               <Icon as={FaPhone} boxSize={5} color="whiteAlpha.700" />{" "}
               <Text>450 822-8711</Text>
             </Flex>
@@ -100,7 +99,7 @@ export default function Contact() {
         </Box>
 
         {/* RIGHT PANEL (Form placeholder) */}
-        <Box
+        {/* <Box
           bg="#e8e8e8ff" // Slightly lighter dark background for the form side from the image
           w={{ base: "100%", lg: "60%" }}
           px={{ base: 0, lg: 12 }}
@@ -110,8 +109,8 @@ export default function Contact() {
           justifyContent="center"
           alignItems={"center"} // Center the form vertically
         >
-          {/* <ContactUsForm /> */}
-        </Box>
+          <ContactUsForm />
+        </Box> */}
       </Flex>
     </Flex>
   );

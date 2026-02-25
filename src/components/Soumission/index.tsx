@@ -29,7 +29,7 @@ export default function SoumissionBanner() {
       {/* Background image */}
       <Box position="absolute" inset="0" zIndex={0}>
         <Image
-          src="/finance.png" // replace with your image path
+          src="/financing.png" // replace with your image path
           alt="Renovation rive sud"
           fill
           style={{ objectFit: "cover" }}

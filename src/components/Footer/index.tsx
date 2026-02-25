@@ -17,7 +17,7 @@ const links = [
   { label: "Projets", href: "#projets" },
   { label: "À propos", href: "#apropos" },
   { label: "Financement", href: "#financement" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const accounts = [
