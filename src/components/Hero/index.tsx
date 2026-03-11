@@ -197,7 +197,15 @@ export default function Hero() {
         width="100%"
         bottom="0"
         minH="100svh"
-        background="linear-gradient(200deg, rgb(0, 5, 17), rgba(44, 44, 44, 0.4),rgba(0, 0, 0, 0.14),rgba(0, 6, 22, 0.6), rgb(0, 5, 17))"
+        background="linear-gradient(180deg, rgba(0, 5, 17, 0.32), rgba(44, 44, 44, 0),rgba(0, 0, 0, 0),rgba(0, 6, 22, 0.6), rgb(0, 5, 17))"
+        zIndex={2}
+      ></Box>
+      <Box
+        position="absolute"
+        width="100%"
+        bottom="0"
+        minH="100svh"
+        background="linear-gradient(230deg, rgb(0, 5, 17), rgba(0, 6, 22, 0.26),rgba(0, 0, 0, 0),rgba(0, 6, 22, 0.35), rgb(0, 5, 17))"
         zIndex={2}
       ></Box>
       <Box
