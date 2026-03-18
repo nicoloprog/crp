@@ -51,26 +51,6 @@ export default function FinancingBanner() {
         maxW={"100%"}
         w="full"
       >
-        {/* Text */}
-        <Flex
-          direction="column"
-          align={isMobile ? "center" : "flex-start"}
-          textAlign={isMobile ? "center" : "left"}
-          gap={2}
-        >
-          <Heading
-            fontSize={isMobile ? "xl" : "2xl"}
-            fontWeight="bold"
-            color="white"
-          >
-            Financement disponible !
-          </Heading>
-          <Text fontSize={isMobile ? "sm" : "md"} color="white">
-            Que ce soit pour une rénovation ou une construction complète, nous
-            proposons des plans de paiement adaptés à votre budget.
-          </Text>
-        </Flex>
-
         {/* Single Button */}
         <Link
           href="https://www.globalpayments.com/fr-ca/point-de-vente/acheter-maintenant-payer-plus-tard"
@@ -85,6 +65,24 @@ export default function FinancingBanner() {
             Global Payment
           </Button>
         </Link>
+        <Flex
+          direction="column"
+          align={isMobile ? "center" : "flex-end"}
+          textAlign={isMobile ? "center" : "left"}
+          gap={2}
+        >
+          <Heading
+            fontSize={isMobile ? "xl" : "2xl"}
+            fontWeight="bold"
+            color="white"
+          >
+            Financement disponible
+          </Heading>
+          <Text fontSize={isMobile ? "sm" : "md"} color="white">
+            Que ce soit pour une rénovation ou une construction complète, nous
+            proposons des plans de paiement adaptés à votre budget.
+          </Text>
+        </Flex>
       </Flex>
     </Flex>
   );

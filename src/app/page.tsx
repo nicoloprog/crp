@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 // import Contact from "@/components/Contact";
 import FinancingBanner from "@/components/Financement";
 import SoumissionBanner from "@/components/Soumission";
+import Planbanner from "@/components/plan";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <ProjetsSection />
       {/* <Contact /> */}
       <SoumissionBanner />
+      <Planbanner />
       <FinancingBanner />
       <Footer />
     </Box>

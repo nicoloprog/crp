@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 
-export default function SoumissionBanner() {
+export default function FinancingBanner() {
   const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
@@ -29,8 +29,8 @@ export default function SoumissionBanner() {
       {/* Background image */}
       <Box position="absolute" inset="0" zIndex={0}>
         <Image
-          src="/financing.png" // replace with your image path
-          alt="Renovation rive sud"
+          src="/cuisine.png" // replace with your image path
+          alt="Construction"
           fill
           style={{ objectFit: "cover" }}
         />
@@ -51,24 +51,10 @@ export default function SoumissionBanner() {
         maxW={"100%"}
         w="full"
       >
-        {/* Single Button */}
-        <Link
-          href="https://link.billdr.co/concept-renovation-prestige-inc"
-          isExternal
-        >
-          <Button
-            bg="#cda675"
-            _hover={{ bg: "#b48b59" }}
-            color="white"
-            size={isMobile ? "md" : "lg"}
-          >
-            Soumission en ligne
-          </Button>
-        </Link>
         {/* Text */}
         <Flex
           direction="column"
-          align={isMobile ? "center" : "flex-end"}
+          align={isMobile ? "center" : "flex-start"}
           textAlign={isMobile ? "center" : "left"}
           gap={2}
         >
@@ -77,12 +63,25 @@ export default function SoumissionBanner() {
             fontWeight="bold"
             color="white"
           >
-            Soumission
+            Calculateur 3D
           </Heading>
           <Text fontSize={isMobile ? "sm" : "md"} color="white">
-            Détaillée et transparente pour vos tous travaux de construction.
+            Estimez le coût de votre projet de cuisine en quelques étapes
+            simples.
           </Text>
         </Flex>
+
+        {/* Single Button */}
+        <Link href="https://qualiprix.ca/calculateur" isExternal>
+          <Button
+            bg="#cda675"
+            _hover={{ bg: "#b48b59" }}
+            color="white"
+            size={isMobile ? "md" : "lg"}
+          >
+            Calculateur
+          </Button>
+        </Link>
       </Flex>
     </Flex>
   );
