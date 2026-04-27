@@ -110,9 +110,9 @@ const Footer = () => {
           textAlign={{ base: "left", md: "center" }}
           color="gray.500"
         >
-          © {new Date().getFullYear()} Par{" "}
+          Fait par{" "}
           <Link
-            href="https://www.grandiflores.com/naturopathe"
+            href="https://portfolio-seven-lac-89.vercel.app/"
             color="blue.400"
             fontWeight="semibold"
             isExternal
@@ -120,6 +120,15 @@ const Footer = () => {
           >
             Nicolas Paquette
           </Link>
+        </Text>
+        <Text
+          fontSize="xs"
+          textAlign={{ base: "left", md: "center" }}
+          maxW={{ base: "50%", md: "center" }}
+          color="gray.500"
+        >
+          © 2025 - {new Date().getFullYear()} Concept Renovation Prestige. All
+          rights reserved.
         </Text>
 
         {/* Number badge aligned to the right */}
