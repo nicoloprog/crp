@@ -279,7 +279,7 @@ export default function SubscribePopup() {
         <ModalBody pb={8}>
           {status === "success" ? (
             <Alert status="success" borderRadius="md">
-              <AlertIcon color="gray.900" />
+              <AlertIcon textColor="gray.900" />
               Vous êtes maintenant inscrit !
             </Alert>
           ) : (
