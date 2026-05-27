@@ -31,6 +31,8 @@ const MAX_EMAIL_LENGTH = 254;
 const MIN_NAME_LENGTH = 2;
 const POPUP_TRIGGER_SECTION_ID = "works";
 const BRAND_GOLD = "rgba(195, 158, 111, 1)";
+const SCRIPT_FONT_STACK =
+  '"Brush Script MT", "Brush Script Std", "Segoe Script", "Lucida Handwriting", cursive';
 const RATE_LIMIT_DELAY_MS = 1000;
 const MIN_FILL_TIME_MS = 3000; // Humans take at least 3 seconds to type
 
@@ -286,7 +288,7 @@ export default function SubscribePopup() {
             <form onSubmit={handleSubmit} noValidate>
               <VStack spacing={6}>
                 <Text
-                  fontFamily={"Brush Script MT"}
+                  fontFamily={SCRIPT_FONT_STACK}
                   fontSize={{ base: "2xl", md: "3xl" }}
                   color="gray.200"
                   textAlign="center"
