@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import ChakraProviders from "@/contexts/ChakraProviders";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import CookieConsent from "@/components/CookieConsent";
 
 export const metadata: Metadata = {
   title: "Rénovation rive-sud montréal | résidentiel et commercial",
@@ -74,13 +74,9 @@ export default function RootLayout({
         <ChakraProviders>
           <Header />
           {children}
+          <CookieConsent />
         </ChakraProviders>
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-RKR1ZZ8PQ8"
-        ></script>
       </body>
-      <GoogleAnalytics gaId="G-RKR1ZZ8PQ8" />
     </html>
   );
 }

@@ -15,13 +15,14 @@ const App = () => {
 
   const images = [
     { title: "Cuisine", imageUrl: "/gallerie4.jpg" },
-    { title: "Salle de bain", imageUrl: "/salledebain.jpeg" },
-    { title: "Projets intérieurs", imageUrl: "/interieur.jpg" },
+    { title: "Salle de bain", imageUrl: "/gallerie8.jpg" },
+    { title: "Projets Intérieurs", imageUrl: "/interieur.jpg" },
     { title: "Projets Extérieurs", imageUrl: "/exterieur1.jpg" },
   ];
 
   return (
     <Box
+      id="works"
       minH="100svh"
       display="flex"
       flexDirection={{ base: "column", md: "row" }}

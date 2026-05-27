@@ -1,12 +1,20 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: "https://www.conceptrenovationprestige.com",
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 1,
-    },
+  const baseUrl = "https://www.conceptrenovationprestige.com";
+  const routes = [
+    "",
+    "/contact",
+    "/politique-confidentialite",
+    "/conditions-utilisation",
+    "/politique-cookies",
+    "/mentions-legales",
   ];
+
+  return routes.map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: route === "" ? "daily" : "monthly",
+    priority: route === "" ? 1 : 0.5,
+  }));
 }

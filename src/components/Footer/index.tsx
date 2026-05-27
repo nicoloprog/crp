@@ -1,155 +1,215 @@
 "use client";
+
 import {
   Box,
-  Stack,
-  HStack,
-  Link,
-  Image,
-  IconButton,
-  LinkProps,
-  Text,
+  Button,
+  Container,
   Divider,
-  Flex,
+  HStack,
+  Icon,
+  IconButton,
+  Image,
+  Link,
+  LinkProps,
+  SimpleGrid,
+  Stack,
+  Text,
 } from "@chakra-ui/react";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaFacebook,
+  FaInstagram,
+  FaPhoneAlt,
+} from "react-icons/fa";
 
-const links = [
-  { label: "Projets", href: "#projets" },
-  { label: "À propos", href: "#apropos" },
-  { label: "Financement", href: "#financement" },
+const navigationLinks = [
+  { label: "Projets", href: "/#projets" },
+  { label: "À propos", href: "/#apropos" },
+  { label: "Financement", href: "/#financement" },
   { label: "Contact", href: "/contact" },
+];
+
+const legalLinks = [
+  { label: "Confidentialité", href: "/politique-confidentialite" },
+  { label: "Conditions", href: "/conditions-utilisation" },
+  { label: "Cookies", href: "/politique-cookies" },
+  { label: "Mentions légales", href: "/mentions-legales" },
 ];
 
 const accounts = [
   {
     url: "https://www.facebook.com/profile.php?id=61575210156190&mibextid=wwXIfr",
-    label: "Facebook Account",
-    type: "Facebook",
+    label: "Facebook",
     icon: <FaFacebook />,
   },
   {
     url: "https://www.instagram.com/concept_renovation_prestige/",
-    label: "Instagram Account",
-    type: "instagram",
+    label: "Instagram",
     icon: <FaInstagram />,
   },
 ];
 
-const CustomLink = (props: LinkProps) => (
+const FooterLink = (props: LinkProps) => (
   <Link
+    color="gray.300"
     fontSize="sm"
     fontWeight="medium"
-    color="gray.300"
-    _hover={{ color: "white", textDecoration: "none" }}
-    transition="0.3s"
+    lineHeight="1.5"
+    _hover={{ color: "#D9B27C", textDecoration: "none" }}
+    transition="color 0.2s ease"
     {...props}
   />
+);
+
+const FooterHeading = ({ children }: { children: React.ReactNode }) => (
+  <Text
+    color="white"
+    fontSize="sm"
+    fontWeight="semibold"
+    letterSpacing="0.08em"
+    textTransform="uppercase"
+  >
+    {children}
+  </Text>
 );
 
 const Footer = () => {
   return (
     <Box
-      bgGradient="linear(to-r, gray.900, gray.800)"
+      as="footer"
+      bg="#0F1118"
       color="gray.300"
-      pt={10}
-      pb={6}
-      px={4}
+      borderTop="1px solid"
+      borderColor="whiteAlpha.200"
     >
-      {/* Main content */}
-      <Stack
-        maxW="7xl"
-        marginInline="auto"
-        spacing={6}
-        justifyContent="space-between"
-        alignItems="center"
-        direction={{ base: "column", md: "row" }}
-      >
-        {/* Logo */}
-        <Link href="/" _hover={{ textDecoration: "none" }}>
-          <Image w="100px" src="/crp.png" alt="Concept Renovation Prestige" />
-        </Link>
+      <Container maxW="7xl" py={{ base: 10, md: 20 }} px={{ base: 5, md: 8 }}>
+        <Stack spacing={{ base: 10, md: 12 }}>
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={8}>
+            <Stack spacing={5}>
+              <Link
+                href="/"
+                w="fit-content"
+                _hover={{ textDecoration: "none" }}
+              >
+                <Image
+                  w="108px"
+                  src="/crp.png"
+                  alt="Concept Renovation Prestige"
+                />
+              </Link>
+              <Text
+                color="gray.300"
+                fontSize="sm"
+                lineHeight="1.8"
+                maxW="320px"
+              >
+                Entrepreneur en rénovation sur la Rive-Sud de Montreal pour des
+                projets interieurs et exterieurs prestigieux.
+              </Text>
+              <Box
+                display="inline-flex"
+                w="fit-content"
+                color="white"
+                bg="rgba(195, 158, 111, 0.18)"
+                border="1px solid"
+                borderColor="rgba(195, 158, 111, 0.42)"
+                rounded="full"
+                px={4}
+                py={2}
+                fontSize="sm"
+                fontWeight="semibold"
+              >
+                RBQ: 5867 - 4334 - 01
+              </Box>
+            </Stack>
 
-        {/* Links */}
-        <Stack
-          spacing={6}
-          alignItems="center"
-          mb={{ base: 2, md: 0 }}
-          direction={{ base: "column", md: "row" }}
-        >
-          {links.map((link, index) => (
-            <CustomLink key={index} href={link.href}>
-              {link.label}
-            </CustomLink>
-          ))}
-        </Stack>
+            <Stack spacing={4}>
+              <FooterHeading>Navigation</FooterHeading>
+              <Stack spacing={3}>
+                {navigationLinks.map((link) => (
+                  <FooterLink key={link.href} href={link.href}>
+                    {link.label}
+                  </FooterLink>
+                ))}
+              </Stack>
+            </Stack>
 
-        {/* Social Icons */}
-        <HStack spacing={5}>
-          {accounts.map((sc, index) => (
-            <IconButton
-              key={index}
-              as={Link}
-              isExternal
-              href={sc.url}
-              aria-label={sc.label}
-              colorScheme="gray"
-              icon={sc.icon}
-              rounded="md"
-            />
-          ))}
-        </HStack>
-      </Stack>
+            <Stack spacing={4}>
+              <FooterHeading>Termes et Conditions</FooterHeading>
+              <Stack spacing={3}>
+                {legalLinks.map((link) => (
+                  <FooterLink key={link.href} href={link.href}>
+                    {link.label}
+                  </FooterLink>
+                ))}
+              </Stack>
+            </Stack>
 
-      {/* Separator */}
-      <Divider borderColor="gray.700" my={6} />
+            <Stack spacing={4}>
+              <FooterHeading>Contact</FooterHeading>
+              <Stack spacing={3}>
+                <HStack spacing={3} align="flex-start">
+                  <Icon as={FaPhoneAlt} color="#D9B27C" mt={1} />
+                  <FooterLink href="tel:14508228711">450 822-8711</FooterLink>
+                </HStack>
+                <HStack spacing={3} align="flex-start">
+                  <Icon as={FaEnvelope} color="#D9B27C" mt={1} />
+                  <FooterLink href="mailto:contact@infocrp.com">
+                    contact@infocrp.com
+                  </FooterLink>
+                </HStack>
+              </Stack>
 
-      <Box position="relative" mt={6}>
-        {/* Centered bottom note */}
-        <Text
-          fontSize="xs"
-          textAlign={{ base: "left", md: "center" }}
-          color="gray.500"
-        >
-          Fait par{" "}
-          <Link
-            href="https://portfolio-seven-lac-89.vercel.app/"
-            color="blue.400"
-            fontWeight="semibold"
-            isExternal
-            _hover={{ textDecoration: "underline" }}
+              <HStack spacing={3} pt={2}>
+                {accounts.map((account) => (
+                  <IconButton
+                    key={account.url}
+                    as={Link}
+                    isExternal
+                    href={account.url}
+                    aria-label={account.label}
+                    icon={account.icon}
+                    color="white"
+                    bg="whiteAlpha.200"
+                    border="1px solid"
+                    borderColor="whiteAlpha.300"
+                    rounded="md"
+                    _hover={{ bg: "#C39E6F", textDecoration: "none" }}
+                  />
+                ))}
+              </HStack>
+            </Stack>
+          </SimpleGrid>
+
+          <Divider borderColor="whiteAlpha.200" />
+
+          <Stack
+            direction={{ base: "column", md: "row" }}
+            spacing={3}
+            align={{ base: "flex-start", md: "center" }}
+            justify="space-between"
+            color="gray.500"
+            fontSize="xs"
           >
-            Nicolas Paquette
-          </Link>
-        </Text>
-        <Text
-          fontSize="xs"
-          textAlign={{ base: "left", md: "center" }}
-          maxW={{ base: "50%", md: "center" }}
-          color="gray.500"
-        >
-          © 2025 - {new Date().getFullYear()} Concept Renovation Prestige. All
-          rights reserved.
-        </Text>
-
-        {/* Number badge aligned to the right */}
-        <Box
-          position="absolute"
-          right={0}
-          top="50%"
-          transform="translateY(-50%)"
-          bg="rgba(195, 159, 111, 0.93)"
-          color="white"
-          px={{ base: 2, md: 4 }}
-          py={{ base: 0, md: 1 }}
-          rounded="full"
-          fontWeight={{ base: "semibold", md: "semibold" }}
-          fontSize={{ base: "sm", md: "xl" }}
-          boxShadow="md"
-          border="1px solid #ddd"
-        >
-          RBQ: 5867 - 4334 - 01
-        </Box>
-      </Box>
+            <Text>
+              &copy; 2025 - {new Date().getFullYear()} Concept Renovation
+              Prestige. All rights reserved.
+            </Text>
+            <Text>
+              Fait par{" "}
+              <Link
+                href="https://portfolio-seven-lac-89.vercel.app/"
+                color="#D9B27C"
+                fontWeight="semibold"
+                isExternal
+                _hover={{ color: "white" }}
+              >
+                Nicolas Paquette
+              </Link>
+            </Text>
+          </Stack>
+        </Stack>
+      </Container>
     </Box>
   );
 };

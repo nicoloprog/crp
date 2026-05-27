@@ -92,7 +92,7 @@ export default function Contact() {
             <Flex align="center" gap={4}>
               <Icon as={FaEnvelope} boxSize={5} color="whiteAlpha.700" />{" "}
               <Text maxW={{ base: "72.5%", md: "100%" }}>
-                ConceptRenoprestige@icloud.com
+                contact@infocrp.com
               </Text>
             </Flex>
           </VStack>

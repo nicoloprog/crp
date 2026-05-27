@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 // import Contact from "@/components/Contact";
 import FinancingBanner from "@/components/Financement";
 import SoumissionBanner from "@/components/Soumission";
+import SubscribePopup from "@/components/SubscribeForm";
 import Planbanner from "@/components/plan";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <SoumissionBanner />
       <Planbanner />
       <FinancingBanner />
+      <SubscribePopup />
       <Footer />
     </Box>
   );
