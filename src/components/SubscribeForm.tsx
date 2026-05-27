@@ -279,14 +279,15 @@ export default function SubscribePopup() {
         <ModalBody pb={8}>
           {status === "success" ? (
             <Alert status="success" borderRadius="md">
-              <AlertIcon />
-              Inscription réussie !
+              <AlertIcon color="gray.800" />
+              Vous êtes maintenant inscrit !
             </Alert>
           ) : (
             <form onSubmit={handleSubmit} noValidate>
               <VStack spacing={6}>
                 <Text
-                  fontSize={{ base: "sm", md: "lg" }}
+                  fontFamily={"Brush Script MT"}
+                  fontSize={{ base: "2xl", md: "3xl" }}
                   color="gray.200"
                   textAlign="center"
                   lineHeight="1.05"

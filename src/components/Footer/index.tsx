@@ -103,8 +103,8 @@ const Footer = () => {
                 lineHeight="1.8"
                 maxW="320px"
               >
-                Entrepreneur en rénovation sur la Rive-Sud de Montreal pour des
-                projets interieurs et exterieurs prestigieux.
+                Entrepreneur en rénovation sur la Rive-Sud de Montréal pour des
+                projets intérieurs et extérieurs prestigieux.
               </Text>
               <Box
                 display="inline-flex"
