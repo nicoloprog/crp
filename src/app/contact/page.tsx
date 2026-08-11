@@ -1,117 +1,168 @@
 "use client";
 
-import { Box, Flex, Text, Heading, Icon, VStack } from "@chakra-ui/react";
-import { FaPhone, FaEnvelope, FaInstagram, FaFacebook } from "react-icons/fa";
+import { Box, Flex, Text, Heading, Icon, Link, Badge } from "@chakra-ui/react";
+import { FaPhone, FaEnvelope, FaArrowRight, FaClock } from "react-icons/fa";
 
 export default function Contact() {
   return (
     <Flex
       id="contact"
       fontFamily={"Cinzel"}
-      direction={{ base: "column", lg: "row" }}
-      backgroundColor={"#12131E"} // Dark background color from the image
+      backgroundColor={"#1A1D2B"}
       alignItems={"center"}
-      justifyContent="center" // Center content vertically and horizontally
+      justifyContent="center"
       w="full"
       minH="100vh"
       color="white"
-      p={{ base: 4, lg: 8 }} // Add some padding around the entire container
+      p={{ base: 4, lg: 8 }}
+      position="relative"
+      overflow="hidden"
     >
-      <Flex
-        direction={{ base: "column", lg: "row" }}
-        backgroundColor="#12131E" // Inner container background (same as body for seamless look)
-        borderRadius="xl" // Rounded corners for the entire contact box
-        overflow="hidden" // Ensures content respects border radius
-        boxShadow="lg" // Optional: Add a subtle shadow
-        maxW="1200px" // Max width for the content
-        width="full" // Take full width up to maxW
+      {/* Ambient background glow */}
+      <Box
+        position="absolute"
+        top="20%"
+        left="50%"
+        transform="translateX(-50%)"
+        width="700px"
+        height="500px"
+        borderRadius="full"
+        bg="radial-gradient(circle, rgba(156,130,101,0.2) 0%, rgba(0,0,0,0) 70%)"
+        filter="blur(50px)"
+      />
+
+      <Box
+        backgroundColor="rgba(255,255,255,0.06)"
+        backdropFilter="blur(24px)"
+        border="1px solid rgba(255,255,255,0.12)"
+        borderRadius="2xl"
+        boxShadow="0 25px 70px rgba(0,0,0,0.35)"
+        maxW="640px"
+        width="full"
+        p={{ base: 8, md: 12 }}
+        marginTop={{ base: 0, md: 24 }}
+        position="relative"
+        zIndex={1}
       >
-        {/* LEFT PANEL */}
-        <Box
-          bg="#9C8265" // Darker brown/grey background from the image
-          w={"100%"}
-          p={{ base: 8, lg: 12 }}
-          display="flex"
-          flexDirection="column"
-          justifyContent={{ base: "center", lg: "flex-start" }} // Center content on small screens, align left on large
-          alignItems={{ base: "left", lg: "flex-start" }} // Center content on small screens, align left on large
-          textAlign={{ base: "center", lg: "left" }} // Center text on small screens, align left on large
-          position="relative" // For the circle overlay
-          overflow="hidden" // Ensure circle overlay doesn't spill
+        <Text
+          color="whiteAlpha.800"
+          lineHeight="short"
+          textAlign="center"
+          mb={10}
+          maxW="580px"
         >
-          {/* Circular overlay on the left panel */}
-          <Box
-            position="absolute"
-            bottom="-50px"
-            right="-50px"
-            width="180px"
-            height="180px"
-            borderRadius="full"
-            bg="rgba(255, 255, 255, 1)" // Light white transparent circle
-            opacity="0.2"
-            zIndex="0"
-          />
-          <Box
-            position="absolute"
-            top="-30px"
-            left="-30px"
-            width="100px"
-            height="100px"
-            borderRadius="full"
-            bg="rgba(255, 255, 255, 1)" // Smaller, more subtle circle
-            opacity="0.1"
-            zIndex="0"
-          />
+          Contactez-nous pour discuter de vos besoins et obtenir une soumission
+          personnalisée.
+        </Text>
 
-          <Heading size="lg" mb={4} zIndex="1">
-            NOUS JOINDRE
-          </Heading>
-          <Text fontSize="md" mb={12} zIndex="1">
-            Que ce soit pour une question, une idée ou une demande de
-            soumission, notre équipe est là pour vous écouter. Écrivez-nous, et
-            bâtissons ensemble.
-          </Text>
-
-          <VStack
-            align={{ base: "flex-start", lg: "flex-start" }}
-            spacing={7}
-            zIndex="1"
+        <Flex direction="column" gap={4}>
+          <Link
+            href="tel:+14384551901"
+            role="group"
+            display="flex"
+            alignItems="center"
+            justifyContent="space-between"
+            px={6}
+            py={5}
+            borderRadius="xl"
+            bg="rgba(255,255,255,0.05)"
+            border="1px solid rgba(255,255,255,0.1)"
+            transition="all 0.25s ease"
+            _hover={{
+              bg: "rgba(255,255,255,0.1)",
+              borderColor: "#9C8265",
+              transform: "translateX(4px)",
+            }}
           >
-            <Flex align="center" gap={4} fontSize="md">
-              <Icon as={FaPhone} boxSize={5} color="whiteAlpha.700" />{" "}
-              <Text>450 822-8711</Text>
-            </Flex>
             <Flex align="center" gap={4}>
-              <Icon as={FaInstagram} boxSize={5} color="whiteAlpha.700" />{" "}
-              <Text>ConceptRénovationPrestige</Text>
+              <Flex
+                align="center"
+                justify="center"
+                boxSize="46px"
+                borderRadius="full"
+                bg="rgba(156,130,101,0.2)"
+                transition="all 0.25s ease"
+                _groupHover={{ bg: "#9C8265" }}
+              >
+                <Icon
+                  as={FaPhone}
+                  boxSize={4}
+                  color="#D4B896"
+                  _groupHover={{ color: "white" }}
+                />
+              </Flex>
+              <Box>
+                <Text fontSize="sm" color="whiteAlpha.600">
+                  Appelez-nous
+                </Text>
+                <Text fontSize="md">438 455-1901</Text>
+              </Box>
             </Flex>
-            <Flex align="center" gap={4}>
-              <Icon as={FaFacebook} boxSize={5} color="whiteAlpha.700" />{" "}
-              <Text>ConceptRénovationPrestige</Text>
-            </Flex>
-            <Flex align="center" gap={4}>
-              <Icon as={FaEnvelope} boxSize={5} color="whiteAlpha.700" />{" "}
-              <Text maxW={{ base: "72.5%", md: "100%" }}>
-                contact@infocrp.com
-              </Text>
-            </Flex>
-          </VStack>
-        </Box>
+          </Link>
 
-        {/* RIGHT PANEL (Form placeholder) */}
-        {/* <Box
-          bg="#e8e8e8ff" // Slightly lighter dark background for the form side from the image
-          w={{ base: "100%", lg: "60%" }}
-          px={{ base: 0, lg: 12 }}
-          minH={{ base: "auto", lg: "500px" }} // Ensure a minimum height for the form area
-          display="flex"
-          flexDirection="column"
-          justifyContent="center"
-          alignItems={"center"} // Center the form vertically
+          <Link
+            href="mailto:contact@infocrp.com"
+            role="group"
+            display="flex"
+            alignItems="center"
+            justifyContent="space-between"
+            px={6}
+            py={5}
+            borderRadius="xl"
+            bg="rgba(255,255,255,0.05)"
+            border="1px solid rgba(255,255,255,0.1)"
+            transition="all 0.25s ease"
+            _hover={{
+              bg: "rgba(255,255,255,0.1)",
+              borderColor: "#9C8265",
+              transform: "translateX(4px)",
+            }}
+          >
+            <Flex align="center" gap={4}>
+              <Flex
+                align="center"
+                justify="center"
+                boxSize="46px"
+                borderRadius="full"
+                bg="rgba(156,130,101,0.2)"
+                transition="all 0.25s ease"
+                _groupHover={{ bg: "#9C8265" }}
+              >
+                <Icon
+                  as={FaEnvelope}
+                  boxSize={4}
+                  color="#D4B896"
+                  _groupHover={{ color: "white" }}
+                />
+              </Flex>
+              <Box>
+                <Text fontSize="sm" color="whiteAlpha.600">
+                  Écrivez-nous
+                </Text>
+                <Text fontWeight="medium">contact@infocrp.com</Text>
+              </Box>
+            </Flex>
+          </Link>
+        </Flex>
+
+        <Flex
+          align="center"
+          gap={2}
+          mt={8}
+          pt={6}
+          borderTop="1px solid rgba(255,255,255,0.08)"
         >
-          <ContactUsForm />
-        </Box> */}
-      </Flex>
+          <Text
+            fontSize={{ base: "md", md: "lg" }}
+            marginX="auto"
+            textAlign="center"
+            color="whiteAlpha.600"
+          >
+            lundi au vendredi
+            <br /> 9:00 AM à 17:00 PM
+          </Text>
+        </Flex>
+      </Box>
     </Flex>
   );
 }

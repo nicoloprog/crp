@@ -150,7 +150,7 @@ const Footer = () => {
               <Stack spacing={3}>
                 <HStack spacing={3} align="flex-start">
                   <Icon as={FaPhoneAlt} color="#D9B27C" mt={1} />
-                  <FooterLink href="tel:14508228711">450 822-8711</FooterLink>
+                  <FooterLink href="tel:14384551901">438 455-1901</FooterLink>
                 </HStack>
                 <HStack spacing={3} align="flex-start">
                   <Icon as={FaEnvelope} color="#D9B27C" mt={1} />
